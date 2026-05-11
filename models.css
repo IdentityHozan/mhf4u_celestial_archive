@@ -557,6 +557,141 @@
     box-shadow: 0 0 14px var(--glow-bright);
 }
 
+.mobile-show { display: none; }
+
+
+select.filter-bar {
+    margin: auto 22px 0;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 24px;
+    background: #f4f1eb;
+    color: #161C48;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    border: 1px solid var(--gold-main);
+    cursor: pointer;
+    appearance: none; /* Removes default browser styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23161C48' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+}
+
+select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright); }
+
+@media (max-width: 950px) {
+    .mobile-hide { display: none !important; }
+    .mobile-show { display: inline-block; }
+
+    .archive-body { 
+        padding: 0; 
+        background: var(--space-base); 
+    }
+    
+    .archive-shell { 
+        width: 100vw; 
+        height: 100dvh; /* Uses dynamic viewport height so iOS Safari doesn't cut it off */
+        border: 0; 
+        border-radius: 0;
+    }
+    
+    .archive-layout { 
+        display: flex; 
+        flex-direction: column; 
+    }
+    
+    /* Top Menu Converts to Horizontal Scrolling */
+    .archive-sidebar { 
+        border-right: 0; 
+        border-bottom: 1px solid rgba(244, 223, 172, 0.14); 
+        padding: 15px 0 10px;
+        flex-shrink: 0;
+    }
+    
+    .search-slate { margin: 0 15px 15px; }
+    .side-heading { display: none; } /* Hide heading to save vertical space */
+    
+    /* Horizontal Swipeable Tabs */
+    .model-tabs {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+    }
+    
+    .model-tabs::-webkit-scrollbar { height: 4px; }
+    
+    .model-tab {
+        min-width: 180px; /* Forces buttons to sit side-by-side */
+        height: auto;
+        padding: 12px 15px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        border-left: none;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.05);
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .model-tab span { display: none; } /* Hide triangle indicator */
+    
+    .model-tab.active {
+        background: #f4f1eb;
+        border-left: none;
+        border-bottom: 3px solid var(--gold-main);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    
+    /* Hide the select dropdown on mobile to keep it clean, rely on search */
+    select.filter-bar { display: none; }
+
+    /* The Main Stage */
+    .archive-stage { 
+        padding: 15px; 
+        overflow-y: auto; 
+        flex-grow: 1; 
+    }
+    
+    .model-card { 
+        padding: 20px; 
+    }
+    
+    .model-header { 
+        flex-direction: column; 
+        gap: 8px; 
+        padding-bottom: 10px; 
+    }
+    
+    .model-header h1 { font-size: 1.3rem; }
+    
+    .graph-frame { height: 300px; min-height: 200px; }
+    
+    /* Disable the resizer and fixed heights on mobile so it scrolls naturally */
+    .resizer { display: none; }
+    
+    .analysis-panel { 
+        resize: none; 
+        max-height: none; 
+        overflow: visible; 
+        padding: 15px; 
+    }
+    
+    .equation-row { grid-template-columns: 1fr; }
+    
+    .model-footer { margin-top: 25px; }
+    .model-footer button { min-width: 100px; padding: 10px 20px; }
+}
+
 /* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 950px) {
     .archive-body { padding: 0; overflow: auto; }
@@ -568,3 +703,4 @@
     .model-card { padding: 28px 22px; }
     .equation-row { grid-template-columns: 1fr; }
 }
+

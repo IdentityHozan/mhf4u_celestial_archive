@@ -32,49 +32,57 @@ function prevModel() {
 
 
 function filterModels() {
-    const input = document.getElementById("searchInput");
-    const filter = input.value.toUpperCase();
+    const textFilter = document.getElementById("searchInput").value.toUpperCase();
+    const categoryFilter = document.getElementById("categoryFilter").value;
     const container = document.getElementById("tabContainer");
     const buttons = container.getElementsByClassName("model-tab");
 
     for (let i = 0; i < buttons.length; i++) {
-        let txtValue = buttons[i].textContent || buttons[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            buttons[i].style.display = "flex";
+        let btn = buttons[i];
+        let txtValue = btn.textContent || btn.innerText;
+        let categoryValue = btn.getAttribute("data-category");
+        
+        let matchesText = txtValue.toUpperCase().indexOf(textFilter) > -1;
+        let matchesCategory = (categoryFilter === "all") || (categoryValue === categoryFilter);
+
+        if (matchesText && matchesCategory) {
+            btn.style.display = "flex";
         } else {
-            buttons[i].style.display = "none";
+            btn.style.display = "none";
         }
     }
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
-    // URL Hash handling
     const hashMatch = window.location.hash.match(/model-(\d+)/);
     if (hashMatch) {
         showModel(Number(hashMatch[1]));
     } else {
-        // If no hash, default to model 1
         showModel(1); 
     }
 
-    // Attach Resizer logic to all handles
     const resizers = document.querySelectorAll('.resizer');
     
     resizers.forEach(resizer => {
         let startY, startHeight;
-        
         const graphFrame = resizer.previousElementSibling;
 
         resizer.addEventListener('mousedown', (e) => {
             startY = e.clientY;
             startHeight = parseInt(document.defaultView.getComputedStyle(graphFrame).height, 10);
             
-            // Listen on the document so drag doesn't break if mouse moves fast lol
             document.documentElement.addEventListener('mousemove', doDrag, false);
             document.documentElement.addEventListener('mouseup', stopDrag, false);
+            document.body.style.userSelect = 'none';
+        });
+
+        // Touch support for mobile dragging
+        resizer.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+            startHeight = parseInt(document.defaultView.getComputedStyle(graphFrame).height, 10);
             
-            // Prevent text highlighting while dragging
+            document.documentElement.addEventListener('touchmove', doDragTouch, {passive: false});
+            document.documentElement.addEventListener('touchend', stopDragTouch, false);
             document.body.style.userSelect = 'none';
         });
 
@@ -84,10 +92,25 @@ window.addEventListener('DOMContentLoaded', () => {
                 graphFrame.style.height = `${newHeight}px`;
             }
         }
+        
+        function doDragTouch(e) {
+            // Prevent scrolling the page while dragging the resizer
+            e.preventDefault(); 
+            const newHeight = startHeight + (e.touches[0].clientY - startY);
+            if(newHeight > 150 && newHeight < window.innerHeight * 0.7) {
+                graphFrame.style.height = `${newHeight}px`;
+            }
+        }
 
         function stopDrag() {
             document.documentElement.removeEventListener('mousemove', doDrag, false);
             document.documentElement.removeEventListener('mouseup', stopDrag, false);
+            document.body.style.userSelect = '';
+        }
+        
+        function stopDragTouch() {
+            document.documentElement.removeEventListener('touchmove', doDragTouch, false);
+            document.documentElement.removeEventListener('touchend', stopDragTouch, false);
             document.body.style.userSelect = '';
         }
     });
