@@ -1,0 +1,570 @@
+/* ==========================================================================
+   MODELS PAGE ONLY: Celestial Archive / Genshin UI Style
+   ========================================================================== */
+
+/* The main container taking up the full screen */
+.archive-body {
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 26px 34px;
+    background: linear-gradient(135deg, #0a0d24 0%, #161C48 40%, #2031a7 100%);
+}
+
+.archive-shell {
+    position: relative;
+    z-index: 5;
+    width: min(1500px, 96vw);
+    height: 91vh;
+    margin: 0 auto;
+    border: 1px solid rgba(244, 223, 172, 0.28);
+    background: rgba(9, 16, 43, 0.68);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.62), inset 0 0 50px rgba(79, 142, 203, 0.08);
+    backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* --- HEADER --- */
+.archive-topbar {
+    height: 66px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    background: rgba(6, 12, 33, 0.72);
+    border-bottom: 1px solid rgba(244, 223, 172, 0.14);
+}
+
+.archive-breadcrumb,
+.archive-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gold-bright);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.archive-top-actions {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0;
+}
+
+.archive-emblem {
+    color: var(--gold-main);
+}
+
+.archive-close {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    color: #f8f3e7;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.archive-close:hover {
+    background: rgba(255,255,255,0.12);
+    transform: rotate(90deg);
+}
+
+/* --- LAYOUT SPLIT --- */
+.archive-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    min-height: 0;
+}
+
+/* --- LEFT SIDEBAR (Menu) --- */
+.archive-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-right: 1px solid rgba(244, 223, 172, 0.14);
+    background: rgba(12, 21, 62, 0.72);
+    padding: 22px 0 18px;
+}
+
+.search-slate {
+    margin: 0 22px 22px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(146, 212, 235, 0.14);
+    color: var(--glow-bright);
+}
+
+.search-slate input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+}
+
+.search-slate input::placeholder {
+    color: rgba(255,255,255,0.45);
+}
+
+.side-heading {
+    padding: 0 22px 10px;
+    color: #f8f3e7;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    font-size: 0.83rem;
+}
+
+.model-tabs {
+    overflow-y: auto;
+    padding-bottom: 18px;
+}
+
+.model-tabs::-webkit-scrollbar { width: 5px; }
+.model-tabs::-webkit-scrollbar-thumb { background: rgba(244, 223, 172, 0.35); border-radius: 10px; }
+
+.model-tab {
+    position: relative;
+    width: 100%;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 26px;
+    border: 0;
+    border-left: 4px solid transparent;
+    background: transparent;
+    color: rgba(248, 243, 231, 0.82);
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 600;
+    transition: 0.18s ease;
+}
+
+.model-tab span {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid var(--gold-main);
+    opacity: 0;
+    transition: 0.18s ease;
+}
+
+.model-tab:hover {
+    background: rgba(255,255,255,0.06);
+    color: white;
+}
+
+.model-tab.active {
+    background: linear-gradient(90deg, #f4f1eb 0%, #ece2cf 100%);
+    color: #26304a;
+    border-left-color: var(--gold-main);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.model-tab.active span {
+    opacity: 1;
+}
+
+.filter-bar {
+    margin: auto 22px 0;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f4f1eb;
+    color: #354057;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.filter-bar small { color: #89765a; }
+
+/* --- RIGHT CONTENT (Stage) --- */
+.archive-stage {
+    position: relative;
+    min-width: 0;
+    padding: 36px 52px 28px;
+    overflow: hidden;
+    background: radial-gradient(circle at 70% 35%, rgba(79, 142, 203, 0.19), transparent 45%);
+}
+
+.stage-background-lines::before,
+.stage-background-lines::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(244, 223, 172, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.stage-background-lines::before { width: 760px; height: 760px; right: -250px; top: -240px; }
+.stage-background-lines::after { width: 520px; height: 520px; left: -180px; bottom: -200px; border-style: dashed; }
+
+.model-view {
+    display: none;
+    height: calc(100% - 62px);
+    animation: archiveFade 0.28s ease both;
+}
+
+.model-view.active-view {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes archiveFade { 
+    from { opacity: 0; transform: translateY(8px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* --- THE ARTIFACT PLAQUE --- */
+.model-card {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 34px 42px;
+    color: #384053;
+    background:
+        linear-gradient(90deg, rgba(205,166,113,0.12), transparent 18%, transparent 82%, rgba(205,166,113,0.10)),
+        #f4f1eb;
+    border: 1px solid rgba(244, 223, 172, 0.75);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.38);
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.model-card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(205,166,113,0.35);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Background ✦ watermark */
+.model-card::after {
+    content: "✦";
+    position: absolute;
+    right: 32px;
+    bottom: 22px;
+    color: rgba(205,166,113,0.18);
+    font-size: 8rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.model-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(111, 92, 62, 0.25);
+    padding-bottom: 18px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.model-series {
+    margin: 0 0 8px;
+    color: #9f7634;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.model-header h1 {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    color: #161C48;
+    font-size: clamp(1.45rem, 2.5vw, 2.25rem);
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.star-rating {
+    color: #cda671;
+    font-size: 1.15rem;
+    white-space: nowrap;
+    letter-spacing: 3px;
+}
+
+/* --- THE GRAPH IFRAME --- */
+.graph-frame {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 40vh; /* Base height before drag */
+    min-height: 150px;
+    border: 2px solid #d8cfbc;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(77, 60, 34, 0.14);
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.graph-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.placeholder-graph {
+    display: grid;
+    place-items: center;
+    background:
+        linear-gradient(rgba(205,166,113,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(205,166,113,0.12) 1px, transparent 1px),
+        #fffdf8;
+    background-size: 34px 34px;
+    color: #9f7634;
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+/* Open link floating button */
+.open-embed-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(22, 28, 72, 0.9);
+    color: var(--gold-bright);
+    padding: 8px 16px;
+    border: 1px solid var(--gold-main);
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.open-embed-btn:hover {
+    background: var(--gold-main);
+    color: #161C48;
+}
+
+/* --- SPLIT PANE DRAG HANDLE --- */
+.resizer {
+    height: 24px;
+    cursor: ns-resize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    opacity: 0.5;
+    transition: 0.2s ease;
+    margin: 5px 0;
+}
+
+.resizer:hover, .resizer:active {
+    opacity: 1;
+}
+
+.resizer-handle {
+    width: 50px;
+    height: 4px;
+    background: var(--gold-main);
+    border-radius: 4px;
+}
+
+/* --- ADJUSTABLE TEXT PANEL --- */
+.analysis-panel {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(205, 166, 113, 0.4);
+    padding: 25px 30px;
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #161C48; /* Deepest Navy for high contrast */
+    border-radius: 8px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
+    
+    /* Resizable properties */
+    resize: vertical;
+    overflow: auto;
+    min-height: 180px;
+    flex: 1; /* Fills remaining space by default */
+}
+
+/* Scrollbar specific to the resize panel */
+.analysis-panel::-webkit-scrollbar { width: 6px; }
+.analysis-panel::-webkit-scrollbar-thumb { background: rgba(205, 166, 113, 0.5); border-radius: 4px; }
+.analysis-panel::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); border-radius: 4px; }
+
+/* Text Content Formatting */
+.analysis-scroll h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    color: #161C48;
+    border-bottom: 1px solid rgba(205, 166, 113, 0.3);
+    padding-bottom: 8px;
+    margin: 30px 0 15px 0;
+}
+
+.analysis-scroll p {
+    margin-bottom: 22px;
+}
+
+.analysis-scroll strong {
+    color: #9f7634;
+    font-weight: 800;
+}
+
+/* Genshin Style Lore Box */
+.lore-box {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #2031a7; /* Royal Blue */
+    background: linear-gradient(90deg, rgba(205, 166, 113, 0.15), transparent);
+    border-left: 4px solid var(--gold-main);
+    padding: 18px 24px;
+    margin-bottom: 25px;
+    border-radius: 0 8px 8px 0;
+    line-height: 1.7;
+}
+
+/* Equation Slate Grid */
+.equation-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.equation-slate {
+    background: rgba(234, 222, 203, 0.6);
+    border-top: 3px solid var(--gold-main);
+    min-height: 92px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.equation-slate span {
+    color: #7f6438;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Genshin Item Bullet List */
+.genshin-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.genshin-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #161C48;
+}
+
+.genshin-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--gold-main);
+    font-size: 1.1rem;
+}
+
+/* --- FOOTER --- */
+.model-footer {
+    height: 62px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    margin-top: 15px;
+}
+
+.model-footer button {
+    min-width: 150px;
+    height: 44px;
+    border: 1px solid rgba(244, 223, 172, 0.42);
+    background: rgba(244, 241, 235, 0.92);
+    color: #354057;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border-radius: 4px;
+}
+
+.model-footer button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(146,212,235,0.3);
+}
+
+.page-dots {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 16px;
+}
+
+.page-dots span {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border: 1px solid var(--glow-bright);
+    background: transparent;
+}
+
+.page-dots span.active {
+    background: var(--glow-bright);
+    box-shadow: 0 0 14px var(--glow-bright);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 950px) {
+    .archive-body { padding: 0; overflow: auto; }
+    .archive-shell { width: 100vw; height: 100vh; border: 0; border-radius: 0;}
+    .archive-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .archive-sidebar { max-height: 250px; border-right: 0; border-bottom: 1px solid rgba(244, 223, 172, 0.14); }
+    .archive-stage { padding: 22px; overflow-y: auto; }
+    .model-view { height: auto; min-height: 720px; }
+    .model-card { padding: 28px 22px; }
+    .equation-row { grid-template-columns: 1fr; }
+}

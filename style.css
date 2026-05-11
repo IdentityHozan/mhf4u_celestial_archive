@@ -1,0 +1,312 @@
+:root {
+    /*Celestial Blueeee*/
+    --space-base: #161C48;   /* Deep Navy */
+    --space-mid: #2031a7;    /* Deep Royal Blue */
+    --glow-deep: #4F8ECB;    /* Mid-tone Blue */
+    --glow-mid: #2596be;     /* Muted Teal/Blue */
+    --glow-bright: #92d4eb;  /* Ice/Sky Blue */
+    
+    /* Golds */
+    --gold-main: #cda671;    /* Muted Gold */
+    --gold-bright: #F4DFAC;  /* Bright Cream/Gold */
+    --gold-dim: rgba(205, 166, 113, 0.3);
+    
+    --text-light: #ffffff;
+    --text-dim: rgba(146, 212, 235, 0.7);
+    --glass-panel: rgba(22, 28, 72, 0.75); 
+    
+    --sharp-radius: 2px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif; 
+    color: var(--text-light);
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0a0d24 0%, var(--space-base) 40%, var(--space-mid) 100%);
+}
+
+/* --- VIBRANT BACKGROUND DECORATIONS --- */
+.deep-space-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+}
+
+.nebula-purple {
+    position: absolute; width: 60vw; height: 60vh;
+    background: radial-gradient(circle, rgba(32, 46, 168, 0.4) 0%, transparent 60%); 
+    top: -10%; left: -10%; filter: blur(60px);
+}
+
+.nebula-teal {
+    position: absolute; width: 70vw; height: 70vh;
+    background: radial-gradient(circle, rgba(37, 150, 190, 0.25) 0%, transparent 60%); 
+    bottom: -20%; right: -10%; filter: blur(80px);
+}
+
+/* Starfields */
+.starfield-back {
+    position: absolute; inset: 0;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1.5px 1.5px at 30% 60%, var(--glow-bright), transparent),
+        radial-gradient(1px 1px at 70% 30%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 50% 50%, var(--glow-mid), transparent);
+    background-size: 150px 150px; 
+    animation: twinkle 4s infinite alternate;
+}
+
+.starfield-front {
+    position: absolute; inset: 0;
+    background-image: 
+        radial-gradient(2px 2px at 25% 15%, var(--gold-bright), transparent),
+        radial-gradient(1.5px 1.5px at 85% 65%, white, transparent),
+        radial-gradient(2.5px 2.5px at 45% 85%, var(--glow-bright), transparent);
+    background-size: 250px 250px;
+    animation: twinkle 3s infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Floating Diamonds */
+.diamond-particles { position: absolute; inset: 0; }
+.diamond {
+    position: absolute; bottom: -5%;
+    width: 8px; height: 12px;
+    background: var(--glow-bright);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    box-shadow: 0 0 10px var(--glow-bright);
+    animation: floatDiamond 15s linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatDiamond {
+    0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; }
+    20% { opacity: 0.8; }
+    80% { opacity: 0.8; }
+    100% { transform: translateY(-100vh) rotate(180deg) scale(1.5); opacity: 0; }
+}
+
+/* Shooting Stars */
+.shooting-stars span {
+    position: absolute; top: 50%; left: 50%;
+    width: 120px; height: 2px;
+    background: linear-gradient(90deg, var(--glow-bright), transparent);
+    border-radius: 50%; animation: shooting 6s linear infinite; opacity: 0;
+}
+.shooting-stars span:nth-child(1) { top: 20%; left: 80%; animation-delay: 0s; }
+.shooting-stars span:nth-child(2) { top: 70%; left: 10%; animation-delay: 2.5s; }
+.shooting-stars span:nth-child(3) { top: 40%; left: 60%; animation-delay: 4s; }
+
+@keyframes shooting {
+    0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+    20% { transform: translateX(-400px) translateY(400px) rotate(-45deg); opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* --- UI FRAMING --- */
+.ui-borders {
+    position: fixed; inset: 20px; z-index: 1; pointer-events: none;
+}
+.border-top, .border-bottom {
+    position: absolute; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.border-top { top: 0; } .border-bottom { bottom: 0; }
+.border-left {
+    position: absolute; top: 10%; bottom: 10%; left: 0; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold-dim), transparent);
+}
+
+.uid-watermark {
+    position: fixed; bottom: 15px; right: 25px; z-index: 100;
+    font-size: 0.8rem; color: rgba(255,255,255,0.4); letter-spacing: 1px;
+}
+
+/* --- PAGE STRUCTURE --- */
+.page-shell {
+    position: relative; z-index: 2; min-height: 100vh;
+    padding: 60px; display: flex; align-items: center;
+}
+
+.main-menu {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    align-items: center; max-width: 1500px; margin: 0 auto; width: 100%;
+}
+
+/* --- LEFT SIDE --- */
+.brand-pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 6px 16px; border: 1px solid var(--gold-dim);
+    background: rgba(205, 166, 113, 0.05); color: var(--gold-main);
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem;
+    border-radius: var(--sharp-radius);
+}
+
+.gold-rune { color: var(--gold-main); }
+
+.hero-title {
+    font-family: 'Cinzel', serif; /* The Fantasy Header Font */
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    line-height: 1.05; margin: 25px 0; color: var(--white); font-weight: 900;
+}
+
+.hero-title span {
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold-main));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(205, 166, 113, 0.2));
+}
+
+.sharp-copy-box {
+    border-left: 2px solid var(--gold-main); 
+    padding-left: 24px; margin-bottom: 30px;
+    background: linear-gradient(90deg, rgba(205, 166, 113, 0.1), transparent);
+}
+
+.sharp-copy-box p {
+    font-size: 1.1rem; line-height: 1.8; color: var(--text-dim); margin: 0; max-width: 520px;
+}
+
+/* Data Readout Grid */
+.data-readout-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 400px; margin-bottom: 40px;
+}
+.data-card {
+    background: rgba(22, 28, 72, 0.5); border: 1px solid var(--gold-dim);
+    padding: 15px; border-radius: var(--sharp-radius); 
+    border-left: 3px solid var(--gold-main); /* Changed to gold */
+}
+.data-label {
+    font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;
+}
+.data-value {
+    font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--white); font-weight: 700;
+}
+.sub-value { font-size: 0.9rem; color: var(--gold-main); }
+.status-online { color: var(--glow-bright); text-shadow: 0 0 10px rgba(146, 212, 235, 0.5); }
+
+/* The Fixed Button */
+.hero-actions { display: flex; flex-direction: column; gap: 20px; }
+
+.sharp-button {
+    display: inline-flex; align-items: center; justify-content: space-between;
+    width: 320px; padding: 18px 26px; background: var(--space-base);
+    border: 1px solid var(--gold-main); color: var(--gold-bright);
+    text-decoration: none; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    border-radius: var(--sharp-radius); position: relative; overflow: hidden;
+    transition: all 0.3s ease; box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.sharp-button::before {
+    content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(146, 212, 235, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.sharp-button:hover {
+    border-color: var(--glow-bright); color: var(--white);
+    box-shadow: 0 0 20px rgba(146, 212, 235, 0.3), inset 0 0 20px rgba(37, 150, 190, 0.4);
+}
+
+.sharp-button:hover .btn-icon { color: var(--glow-bright); }
+.sharp-button:hover::before { left: 100%; }
+
+/* --- RIGHT SIDE: CELESTIAL ASTROLABE --- */
+.celestial-display {
+    position: relative; height: 750px; display: flex; align-items: center; justify-content: center;
+}
+
+.crescent-glow {
+    position: absolute; width: 600px; height: 600px; border-radius: 50%; 
+    box-shadow: inset -30px 0 60px rgba(79, 142, 203, 0.3); transform: rotate(15deg); filter: blur(10px);
+}
+
+.astrolabe-ring {
+    position: absolute; border-radius: 50%; border: 1px solid var(--gold-dim); 
+    display: flex; align-items: center; justify-content: center;
+}
+
+.outer-ring {
+    width: 650px; height: 650px; border: 1px dashed var(--gold-dim);
+    animation: slowSpin 80s linear infinite;
+}
+
+.middle-ring {
+    width: 500px; height: 500px; border: 2px solid rgba(146, 212, 235, 0.15); /* Ice blue */
+    box-shadow: 0 0 30px rgba(146, 212, 235, 0.1), inset 0 0 30px rgba(146, 212, 235, 0.1);
+    animation: slowSpin 40s linear infinite reverse;
+}
+
+.inner-ring {
+    width: 300px; height: 300px; border: 1px solid var(--gold-main);
+    background: radial-gradient(circle, rgba(22, 28, 72, 0.8) 0%, transparent 80%);
+}
+
+.core-glow {
+    width: 100px; height: 100px; background: var(--glow-bright);
+    border-radius: 50%; filter: blur(40px); opacity: 0.2; animation: breathe 4s infinite alternate;
+}
+
+.orbiting-rune {
+    position: absolute; color: var(--gold-main); font-size: 1.5rem;
+    top: -12px; left: 50%; transform-origin: center 325px; 
+    animation: orbitSpin 30s linear infinite; animation-delay: var(--delay);
+}
+
+.sharp-menu-panel {
+    position: relative; z-index: 10; width: 440px; background: var(--glass-panel);
+    border: 1px solid var(--glow-deep); backdrop-filter: blur(16px); padding: 35px;
+    border-radius: var(--sharp-radius); box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateX(60px); 
+}
+
+.panel-header {
+    font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--white);
+    border-bottom: 1px solid var(--gold-dim); padding-bottom: 15px; margin-bottom: 25px;
+    letter-spacing: 0.1em;
+}
+
+.feature-list { display: grid; gap: 16px; }
+
+.feature-item {
+    display: grid; grid-template-columns: 45px 1fr; gap: 24px; /* Increased gap */
+    align-items: center;
+    padding: 20px 24px; /* Increased padding for breathing room */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05); border-radius: var(--sharp-radius);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    border-color: var(--gold-main); background: rgba(205, 166, 113, 0.05);
+    transform: translateX(-5px); 
+}
+
+.feature-icon {
+    width: 45px; height: 45px; display: grid; place-items: center;
+    color: var(--space-base); background: var(--gold-main);
+    font-family: 'Cinzel', serif; font-weight: 900; font-size: 1.3rem;
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%); 
+}
+
+.feature-text h3 { margin: 0 0 6px; color: var(--gold-bright); font-size: 1.05rem; }
+.feature-text p { margin: 0; color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
+
+/* Animations */
+@keyframes slowSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes orbitSpin { from { transform: rotate(0deg) translateX(-50%); } to { transform: rotate(360deg) translateX(-50%); } }
+@keyframes breathe { from { transform: scale(0.8); opacity: 0.1; } to { transform: scale(1.2); opacity: 0.3; } }
+
+@media (max-width: 1200px) {
+    .main-menu { grid-template-columns: 1fr; text-align: center; }
+    .data-readout-grid { margin: 0 auto 40px; }
+    .hero-actions { align-items: center; }
+    .sharp-copy-box { border-left: none; border-bottom: 2px solid var(--glow-deep); padding: 0 0 20px; margin: 0 auto 30px; }
+    .celestial-display { display: none; } 
+    .ui-borders, .uid-watermark { display: none; }
+}
