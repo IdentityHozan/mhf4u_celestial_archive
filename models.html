@@ -47,8 +47,8 @@
                     <button class="model-tab" data-model="2" data-category="reciprocal" onclick="showModel(2)"><span></span><b>II.</b> Building Arch</button>
                     <button class="model-tab" data-model="3" data-category="polynomial" onclick="showModel(3)"><span></span><b>III.</b> KL Skyline</button>
                     <button class="model-tab" data-model="4" data-category="trigonometric" onclick="showModel(4)"><span></span><b>IV.</b> Chair Angle</button>
-                    <button class="model-tab" data-model="5" data-category="root" onclick="showModel(5)"><span></span><b>V.</b> Logo Curve</button>
-                    <button class="model-tab active" data-model="6" data-category="absolute" onclick="showModel(6)"><span></span><b>VI.</b> Caduceus V-Shape</button>
+                    <button class="model-tab active" data-model="5" data-category="sinusoidal" onclick="showModel(5)"><span></span><b>V.</b> Building Arch</button>
+                    <button class="model-tab" data-model="6" data-category="absolute" onclick="showModel(6)"><span></span><b>VI.</b> Caduceus V-Shape</button>
                     <button class="model-tab" data-model="7" data-category="exponential" onclick="showModel(7)"><span></span><b>VII.</b> Bridge Curve</button>
                     <button class="model-tab" data-model="8" data-category="sinusoidal" onclick="showModel(8)"><span></span><b>VIII.</b> Signage Wave</button>
                     <button class="model-tab" data-model="9" data-category="logarithmic" onclick="showModel(9)"><span></span><b>IX.</b> Final Model</button>
@@ -100,7 +100,66 @@
                     </div>
                 </article>
 
-                <article id="model-6" class="model-view active-view">
+
+                <article id="model-5" class="model-view active-view">   
+                    <div class="model-card book-card">
+                        <header class="model-header">
+                            <div>
+                                <p class="model-series">COSINE</p>
+                                <h1>Height of the Building Arch as a Function of Distance</h1>
+                            </div>
+                            <div class="star-rating">★★★★★</div>
+                        </header>
+
+                        <div class="graph-frame">
+                            <a href="https://www.desmos.com/calculator/hmmvhyzz3u" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+                            <iframe src="https://www.desmos.com/calculator/hmmvhyzz3u?embed" title="Building Arch Cosine Desmos graph"></iframe>
+                        </div>
+
+                        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+                        <div class="analysis-panel">
+                            <div class="analysis-scroll">
+                                
+                                <div class="lore-box">
+                                    "I chose this photo because the smooth curve of the building’s arch was a perfect match for modeling with a trigonometric function. To model the arch appearing in the photo, I began by identifying that its shape closely resembled a cosine wave segment, so I selected the parent function \( y=\cos(x) \) as a starting point. From observing the orientation of the curve in my image, I noticed it peaked at the center rather than the edges, which aligned naturally with the shape of the cosine parent function."
+                                </div>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Parent Function</span>\[ y = \cos(x) \]</div>
+                                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = \frac{5}{8}\cos(x - 1.5) + 1 \]</div>
+                                </div>
+
+                                <h3>Transformations Applied</h3>
+                                <p>The transformation process was a strategic sequence designed to align the theoretical wave with the architectural dimensions of the building:</p>
+                                <ul class="genshin-list">
+                                    <li><strong>Vertical Compression (\(a = 5/8\)):</strong> Initially, determining the vertical scale was challenging because the arch was positioned far from the origin. By temporarily isolating the curve's amplitude in Desmos, I determined a compression factor of \(5/8\) was necessary to match the gentle rise and fall of the physical structure compared to the steeper 1-unit amplitude of the parent function.</li>
+                                    <li><strong>Horizontal Translation (\(d = 1.5\)):</strong> I shifted the graph 1.5 units to the right (\(x - 1.5\)) to align the vertex of the cosine curve with the highest point of the arch. Each unit in this model represents the width of one window pane (approx. 0.8m) to maintain consistent real-world scaling.</li>
+                                    <li><strong>Vertical Translation (\(c = 1\)):</strong> I applied a vertical translation of 1 unit upward (\(+1\)) so the curve’s baseline matched the arch’s height relative to the window base.</li>
+                                </ul>
+
+                                <h3>Physical Constraints</h3>
+                                <p>The domain is strictly restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0.25 \le x \le 2.8\} \)</strong>. I limited the domain to the portion of the arch visible in the photograph, representing the horizontal span measured from the white column base. While the parent cosine function has an infinite domain, the physical arch only exists between these two points; extending the function further would no longer accurately reflect the building's structure.</p>
+
+                                <p>The parent function \( y=\cos(x) \) has a range of <strong>\( R: \{y \in \mathbb{R} \mid -1 \le y \le 1\} \)</strong>. After applying transformations, the theoretical range of the model becomes <strong>\( R: \{y \in \mathbb{R} \mid 0.375 \le y \le 1.625\} \)</strong>. However, since the domain is restricted to a specific segment of the wave, the practical range is determined by evaluating the function at the domain's boundaries and the vertex.</p>
+
+                                <p>The range calculation was performed by analyzing the behavior of the function over the interval \([0.25, 2.8]\):</p>
+                                <ul class="genshin-list">
+                                    <li><strong>Maximum Height:</strong> The peak occurs at the vertex \( x=1.5 \), resulting in a height of \( f(1.5)=1.625 \) units.</li>
+                                    <li><strong>Minimum Height:</strong> Since the function is continuous, I evaluated the endpoints at \( x=0.25 \) and \( x=2.8 \), yielding approximate heights of \( 1.197 \) and \( 1.167 \) respectively.</li>
+                                    <li><strong>Contextual Meaning:</strong> These values represent the real-world elevation of the arch measured from the base of the window, where each unit corresponds to a calibrated physical measurement.</li>
+                                </ul>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Restricted Domain</span>\[ 0.25 \le x \le 2.8 \]</div>
+                                    <div class="equation-slate"><span>Approximate Range</span>\[ 1.167 \le y \le 1.625 \]</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="model-6" class="model-view">
                     <div class="model-card book-card">
                         <header class="model-header">
                             <div>
