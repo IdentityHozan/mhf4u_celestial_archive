@@ -159,7 +159,7 @@
                 </article>
 
 
-                    <article id="model-6" class="model-view active-view"> 
+                <article id="model-6" class="model-view active-view"> 
                     <div class="model-card book-card"> 
                         <header class="model-header"> 
                             <div> 
@@ -180,7 +180,7 @@
                             <div class="analysis-scroll">
                                 
                                 <div class="lore-box">
-                                    "I chose this photo because the curve of the concrete path matches the shape of an exponential function. To model the path, I selected the parent function \( y=2^x \) as a starting point, as it inherently captures the increasing, upward-curving trend observed in the architecture."
+                                    "I chose this photo because the curve of the concrete path matches the shape of an exponential function. I used the parent function \(y=2^x\) as my starting model because it has the same increasing and upward-curving trend as the path."
                                 </div>
 
                                 <div class="equation-row">
@@ -189,21 +189,37 @@
                                 </div>
 
                                 <h3>Transformations Applied</h3>
-                                <p>The transformation process involved a strategic adjustment of the base and position to align the mathematical growth rate with the physical structure:</p>
+                                <p>
+                                    After observing the curve’s position and direction in the photograph, I noticed that the path rises gradually from left to right. The standard parent function \(y=2^x\) increased too quickly and did not align with the visible curve, so I adjusted the base, horizontal position, and vertical position of the graph.
+                                </p>
+
                                 <ul class="genshin-list">
-                                    <li><strong>Base Adjustment (\(b = 1.38\)):</strong> The standard base of 2 was too steep for the path's gradual incline. I refined the base to 1.38 to precisely match the rate of growth seen in the photograph.</li>
-                                    <li><strong>Horizontal Translation (\(d = 15.6\)):</strong> I shifted the graph 15.6 units to the right to align the curve's inflection with the starting point of the path in the image.</li>
-                                    <li><strong>Vertical Translation (\(c = -0.0053\)):</strong> A minor downward shift of 0.0053 units was applied to ensure the curve's baseline matched the physical concrete base.</li>
+                                    <li><strong>Base Adjustment (\(b = 1.38\)):</strong> The base was changed from 2 to 1.38 to reduce the steepness of the graph. This made the exponential growth more gradual and better matched the curve of the concrete path.</li>
+                                    <li><strong>Horizontal Translation (\(d = 15.6\)):</strong> The graph was shifted 15.6 units to the right so that the curve aligned with the visible starting position of the path in the photograph.</li>
+                                    <li><strong>Vertical Translation (\(c = -0.0053\)):</strong> The graph was shifted 0.0053 units downward so that the lower part of the curve matched the concrete base more accurately.</li>
                                 </ul>
 
-                                <h3>Physical Constraints</h3>
-                                <p>The domain is strictly restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0 \leq x \leq 20\} \)</strong>. This is contextually justified because the visible portion of the concrete path only exists within this horizontal span[cite: 63, 64].</p>
+                                <p>
+                                    Through these adjustments, the final model became \(f(x)=1.38^{(x-15.6)}-0.0053\), which closely follows the shape and position of the curve shown in the image.
+                                </p>
+
+                                <h3>Domain, Range, and Horizontal Asymptote</h3>
+
+                                <p>
+                                    The restricted domain is <strong>\(D: \{x \in \mathbb{R} \mid 0 \leq x \leq 20\}\)</strong>. This restriction is used because the visible section of the concrete path in the photograph only extends from \(x=0\) to \(x=20\). The model is only meant to represent this specific part of the real structure.
+                                </p>
                                 
-                                <p>The parent function \( y=2^x \) has a range of \( \{y \in \mathbb{R} \mid y > 0\} \). However, my transformed model includes a **horizontal asymptote** at \( y = -0.0053 \). While the theoretical range is \( y > -0.0053 \), the real-world range must be calculated based on our domain endpoints.</p>
+                                <p>
+                                    The parent exponential function has a domain of all real numbers and a range of \(y>0\). After applying the vertical shift, the transformed function has a horizontal asymptote at <strong>\(y=-0.0053\)</strong>. This means the graph approaches this line as \(x\) becomes very small, but it does not touch or cross it. Therefore, the natural range of the transformed function is \(y>-0.0053\).
+                                </p>
+
+                                <p>
+                                    However, because this model is restricted to the real-world section \(0 \leq x \leq 20\), the actual range is based only on the function values at the endpoints:
+                                </p>
 
                                 <ul class="genshin-list">
-                                    <li><strong>Starting Height:</strong> At \( x=0 \), the height is approximately \(-0.0040\).</li>
-                                    <li><strong>Maximum Height:</strong> At the boundary of our photograph (\( x=20 \)), the height reaches \( 4.1201 \).</li>
+                                    <li><strong>Starting Height:</strong> At \(x=0\), \(f(0) \approx -0.0040\).</li>
+                                    <li><strong>Maximum Height:</strong> At \(x=20\), \(f(20) \approx 4.1201\).</li>
                                 </ul>
 
                                 <div class="equation-row">
