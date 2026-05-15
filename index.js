@@ -52,66 +52,75 @@ function filterModels() {
         }
     }
 }
-
 window.addEventListener('DOMContentLoaded', () => {
     const hashMatch = window.location.hash.match(/model-(\d+)/);
+
     if (hashMatch) {
         showModel(Number(hashMatch[1]));
     } else {
-        showModel(1); 
+        showModel(1);
     }
 
     const resizers = document.querySelectorAll('.resizer');
-    
+
     resizers.forEach(resizer => {
-        let startY, startHeight;
         const graphFrame = resizer.previousElementSibling;
+        let startY = 0;
+        let startHeight = 0;
+        let isDragging = false;
 
-        resizer.addEventListener('mousedown', (e) => {
+        resizer.addEventListener('pointerdown', startResize);
+
+        function startResize(e) {
+            e.preventDefault();
+
+            isDragging = true;
             startY = e.clientY;
-            startHeight = parseInt(document.defaultView.getComputedStyle(graphFrame).height, 10);
-            
-            document.documentElement.addEventListener('mousemove', doDrag, false);
-            document.documentElement.addEventListener('mouseup', stopDrag, false);
-            document.body.style.userSelect = 'none';
-        });
+            startHeight = graphFrame.getBoundingClientRect().height;
 
-        // Touch support for mobile dragging
-        resizer.addEventListener('touchstart', (e) => {
-            startY = e.touches[0].clientY;
-            startHeight = parseInt(document.defaultView.getComputedStyle(graphFrame).height, 10);
-            
-            document.documentElement.addEventListener('touchmove', doDragTouch, {passive: false});
-            document.documentElement.addEventListener('touchend', stopDragTouch, false);
-            document.body.style.userSelect = 'none';
-        });
+            resizer.setPointerCapture(e.pointerId);
 
-        function doDrag(e) {
+            document.body.style.userSelect = 'none';
+            document.body.style.cursor = 'ns-resize';
+
+            // Prevent Desmos iframe from stealing mouse events
+            const iframe = graphFrame.querySelector('iframe');
+            if (iframe) iframe.style.pointerEvents = 'none';
+
+            window.addEventListener('pointermove', resize);
+            window.addEventListener('pointerup', stopResize);
+            window.addEventListener('pointercancel', stopResize);
+        }
+
+        function resize(e) {
+            if (!isDragging) return;
+
+            const minHeight = 180;
+            const maxHeight = Math.min(window.innerHeight * 0.75, 650);
             const newHeight = startHeight + (e.clientY - startY);
-            if(newHeight > 150 && newHeight < window.innerHeight * 0.7) {
-                graphFrame.style.height = `${newHeight}px`;
-            }
-        }
-        
-        function doDragTouch(e) {
-            // Prevent scrolling the page while dragging the resizer
-            e.preventDefault(); 
-            const newHeight = startHeight + (e.touches[0].clientY - startY);
-            if(newHeight > 150 && newHeight < window.innerHeight * 0.7) {
-                graphFrame.style.height = `${newHeight}px`;
-            }
+            const clampedHeight = Math.max(minHeight, Math.min(newHeight, maxHeight));
+
+            graphFrame.style.height = `${clampedHeight}px`;
         }
 
-        function stopDrag() {
-            document.documentElement.removeEventListener('mousemove', doDrag, false);
-            document.documentElement.removeEventListener('mouseup', stopDrag, false);
+        function stopResize(e) {
+            if (!isDragging) return;
+
+            isDragging = false;
+
             document.body.style.userSelect = '';
-        }
-        
-        function stopDragTouch() {
-            document.documentElement.removeEventListener('touchmove', doDragTouch, false);
-            document.documentElement.removeEventListener('touchend', stopDragTouch, false);
-            document.body.style.userSelect = '';
+            document.body.style.cursor = '';
+
+            const iframe = graphFrame.querySelector('iframe');
+            if (iframe) iframe.style.pointerEvents = '';
+
+            window.removeEventListener('pointermove', resize);
+            window.removeEventListener('pointerup', stopResize);
+            window.removeEventListener('pointercancel', stopResize);
+
+            try {
+                resizer.releasePointerCapture(e.pointerId);
+            } catch (err) {}
         }
     });
 });
