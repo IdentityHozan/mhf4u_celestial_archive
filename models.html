@@ -159,13 +159,59 @@
                 </article>
 
 
-                 <article id ="model-6" class=model-view active-view"> 
-                    <div class = "model-card book-card"> 
-                        <header class = "model-header"> 
+                    <article id="model-6" class="model-view active-view"> 
+                    <div class="model-card book-card"> 
+                        <header class="model-header"> 
                             <div> 
-                                <p class="model-series">MODEL VI / EXPONENTIAL </p>
-                                <h1> Height of the Curve from Base of the Concrete Path as a Function of the Horizontal Distance from the Leftmost Point of the Path </h1>
+                                <p class="model-series">MODEL VI / EXPONENTIAL</p>
+                                <h1>Height of Concrete Path Curve as a Function of Distance</h1>
+                            </div>
+                            <div class="star-rating">★★★★★</div>
                         </header>
+
+                        <div class="graph-frame">
+                            <a href="https://www.desmos.com/calculator/f7alecjfof" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+                            <iframe src="https://www.desmos.com/calculator/f7alecjfof?embed" title="Concrete Path Exponential graph"></iframe>
+                        </div>
+
+                        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+                        <div class="analysis-panel">
+                            <div class="analysis-scroll">
+                                
+                                <div class="lore-box">
+                                    "I chose this photo because the curve of the concrete path matches the shape of an exponential function. To model the path, I selected the parent function \( y=2^x \) as a starting point, as it inherently captures the increasing, upward-curving trend observed in the architecture."
+                                </div>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Parent Function</span>\[ y = 2^x \]</div>
+                                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = 1.38^{(x-15.6)} - 0.0053 \]</div>
+                                </div>
+
+                                <h3>Transformations Applied</h3>
+                                <p>The transformation process involved a strategic adjustment of the base and position to align the mathematical growth rate with the physical structure:</p>
+                                <ul class="genshin-list">
+                                    <li><strong>Base Adjustment (\(b = 1.38\)):</strong> The standard base of 2 was too steep for the path's gradual incline. I refined the base to 1.38 to precisely match the rate of growth seen in the photograph.</li>
+                                    <li><strong>Horizontal Translation (\(d = 15.6\)):</strong> I shifted the graph 15.6 units to the right to align the curve's inflection with the starting point of the path in the image.</li>
+                                    <li><strong>Vertical Translation (\(c = -0.0053\)):</strong> A minor downward shift of 0.0053 units was applied to ensure the curve's baseline matched the physical concrete base.</li>
+                                </ul>
+
+                                <h3>Physical Constraints</h3>
+                                <p>The domain is strictly restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0 \leq x \leq 20\} \)</strong>. This is contextually justified because the visible portion of the concrete path only exists within this horizontal span[cite: 63, 64].</p>
+                                
+                                <p>The parent function \( y=2^x \) has a range of \( \{y \in \mathbb{R} \mid y > 0\} \). However, my transformed model includes a **horizontal asymptote** at \( y = -0.0053 \). While the theoretical range is \( y > -0.0053 \), the real-world range must be calculated based on our domain endpoints.</p>
+
+                                <ul class="genshin-list">
+                                    <li><strong>Starting Height:</strong> At \( x=0 \), the height is approximately \(-0.0040\).</li>
+                                    <li><strong>Maximum Height:</strong> At the boundary of our photograph (\( x=20 \)), the height reaches \( 4.1201 \).</li>
+                                </ul>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Restricted Domain</span>\[ 0 \le x \le 20 \]</div>
+                                    <div class="equation-slate"><span>Approximate Range</span>\[ -0.0040 \le y \le 4.1201 \]</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
