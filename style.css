@@ -336,3 +336,12 @@ body {
     .celestial-display { display: none; } 
     .ui-borders, .uid-watermark { display: none; }
 }
+
+.resizer {
+    touch-action: none;
+    cursor: ns-resize;
+}
+
+.resizer-handle {
+    pointer-events: none;
+}
