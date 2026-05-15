@@ -21,6 +21,9 @@ function showModel(idNumber) {
     if (history.replaceState) {
         history.replaceState(null, '', `#model-${idNumber}`);
     }
+
+    const activeModel = document.getElementById(`model-${idNumber}`);
+    loadDesmosForModel(activeModel);
 }
 
 function nextModel() {
@@ -124,3 +127,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function loadDesmosForModel(model) {
+    const iframe = model.querySelector('iframe[data-src]');
+
+    if (iframe && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+    }
+}
