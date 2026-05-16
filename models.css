@@ -1,8 +1,3 @@
-/* ==========================================================================
-   MODELS PAGE ONLY: Celestial Archive / Genshin UI Style
-   ========================================================================== */
-
-/* The main container taking up the full screen */
 .archive-body {
     min-height: 100vh;
     overflow: hidden;
@@ -204,8 +199,11 @@
     position: relative;
     min-width: 0;
     padding: 36px 52px 28px;
-    overflow: hidden;
     background: radial-gradient(circle at 70% 35%, rgba(79, 142, 203, 0.19), transparent 45%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
 }
 
 .stage-background-lines::before,
@@ -239,18 +237,18 @@
 /* --- THE ARTIFACT PLAQUE --- */
 .model-card {
     position: relative;
-    height: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
     display: flex;
     flex-direction: column;
-    padding: 34px 42px;
+    padding: 24px 42px 22px;
     color: #384053;
     background:
         linear-gradient(90deg, rgba(205,166,113,0.12), transparent 18%, transparent 82%, rgba(205,166,113,0.10)),
         #f4f1eb;
     border: 1px solid rgba(244, 223, 172, 0.75);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.38);
-    overflow: hidden;
     border-radius: 6px;
+    overflow: hidden; 
 }
 
 .model-card::before {
@@ -259,9 +257,19 @@
     inset: 12px;
     border: 1px solid rgba(205,166,113,0.35);
     pointer-events: none;
-    z-index: 5;
+    z-index: 2;
 }
 
+/* Keep content below the decorative border layer */
+.model-header,
+.graph-toolbar,
+.graph-frame,
+.resizer,
+.analysis-panel {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
 /* Background ✦ watermark */
 .model-card::after {
     content: "✦";
@@ -316,7 +324,7 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 40vh; /* Base height before drag */
+    height: 40vh; 
     min-height: 150px;
     border: 2px solid #d8cfbc;
     background: #ffffff;
@@ -384,6 +392,7 @@
     opacity: 0.5;
     transition: 0.2s ease;
     margin: 5px 0;
+    flex-shrink: 0;
 }
 
 .resizer:hover, .resizer:active {
@@ -403,26 +412,69 @@
     z-index: 1;
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(205, 166, 113, 0.4);
-    padding: 25px 30px;
-    line-height: 1.85;
-    font-size: 1.05rem;
-    color: #161C48; /* Deepest Navy for high contrast */
     border-radius: 8px;
     box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
-    
-    /* Resizable properties */
-    resize: vertical;
-    overflow: auto;
-    min-height: 180px;
-    flex: 1; /* Fills remaining space by default */
+
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0; /* important */
+    overflow: hidden;
+
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding: 0 30px;
+
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #161C48;
 }
 
-/* Scrollbar specific to the resize panel */
-.analysis-panel::-webkit-scrollbar { width: 6px; }
-.analysis-panel::-webkit-scrollbar-thumb { background: rgba(205, 166, 113, 0.5); border-radius: 4px; }
-.analysis-panel::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); border-radius: 4px; }
+/* --- THE SCROLL CONTAINER --- */
+.analysis-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-/* Text Content Formatting */
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 12px;
+}
+
+/* --- CUSTOM CELESTIAL SCROLLBAR --- */
+.analysis-scroll::-webkit-scrollbar { 
+    width: 8px;
+}
+
+.analysis-scroll::-webkit-scrollbar-track { 
+    background: rgba(22, 28, 72, 0.05); 
+    border-radius: 20px;
+    margin: 10px 0; 
+}
+
+.analysis-scroll::-webkit-scrollbar-thumb { 
+    background: linear-gradient(180deg, var(--gold-dim), rgba(205, 166, 113, 0.6)); 
+    border: 2px solid transparent; 
+    background-clip: padding-box;
+    border-radius: 20px;
+    transition: background 0.2s ease;
+}
+
+.analysis-scroll::-webkit-scrollbar-thumb:hover { 
+    background: linear-gradient(180deg, var(--gold-main), var(--gold-bright)); 
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 8px rgba(244, 223, 172, 0.4); 
+}
+
+/* For Firefox compatibility */
+.analysis-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-main) rgba(22, 28, 72, 0.05);
+}
+
+/* Text Content Formatting Inside Scroll Context */
 .analysis-scroll h3 {
     font-family: 'Cinzel', serif;
     font-size: 1.15rem;
@@ -477,6 +529,7 @@
 }
 
 .equation-slate span {
+    background: transparent;
     color: #7f6438;
     font-size: 0.8rem;
     letter-spacing: 0.1em;
@@ -550,6 +603,8 @@
     transform: rotate(45deg);
     border: 1px solid var(--glow-bright);
     background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .page-dots span.active {
@@ -558,7 +613,6 @@
 }
 
 .mobile-show { display: none; }
-
 
 select.filter-bar {
     margin: auto 22px 0;
@@ -573,7 +627,7 @@ select.filter-bar {
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     border: 1px solid var(--gold-main);
     cursor: pointer;
-    appearance: none; /* Removes default browser styling */
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg fill='%23161C48' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
@@ -591,11 +645,12 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
     .archive-body { 
         padding: 0; 
         background: var(--space-base); 
+        overflow: auto;
     }
     
     .archive-shell { 
         width: 100vw; 
-        height: 100dvh; /* Uses dynamic viewport height so iOS Safari doesn't cut it off */
+        height: 100vh; 
         border: 0; 
         border-radius: 0;
     }
@@ -605,8 +660,8 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
         flex-direction: column; 
     }
     
-    /* Top Menu Converts to Horizontal Scrolling */
     .archive-sidebar { 
+        max-height: 250px;
         border-right: 0; 
         border-bottom: 1px solid rgba(244, 223, 172, 0.14); 
         padding: 15px 0 10px;
@@ -614,9 +669,9 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
     }
     
     .search-slate { margin: 0 15px 15px; }
-    .side-heading { display: none; } /* Hide heading to save vertical space */
+    .side-heading { display: none; } 
     
-    /* Horizontal Swipeable Tabs */
+    /* Horizontal Swipeable Tabs on Mobile Screens */
     .model-tabs {
         display: flex;
         flex-direction: row;
@@ -631,7 +686,7 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
     .model-tabs::-webkit-scrollbar { height: 4px; }
     
     .model-tab {
-        min-width: 180px; /* Forces buttons to sit side-by-side */
+        min-width: 180px; 
         height: auto;
         padding: 12px 15px;
         flex-shrink: 0;
@@ -643,7 +698,7 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
         justify-content: center;
     }
     
-    .model-tab span { display: none; } /* Hide triangle indicator */
+    .model-tab span { display: none; } 
     
     .model-tab.active {
         background: #f4f1eb;
@@ -652,18 +707,24 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
     
-    /* Hide the select dropdown on mobile to keep it clean, rely on search */
     select.filter-bar { display: none; }
 
-    /* The Main Stage */
+    /* The Mobile Active Viewport Display Area */
     .archive-stage { 
-        padding: 15px; 
+        padding: 22px; 
         overflow-y: auto; 
         flex-grow: 1; 
+        height: auto;
+    }
+    
+    .model-view { 
+        height: auto; 
     }
     
     .model-card { 
-        padding: 20px; 
+        padding: 28px 22px; 
+        height: auto;
+        flex: none;
     }
     
     .model-header { 
@@ -676,7 +737,7 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
     
     .graph-frame { height: 300px; min-height: 200px; }
     
-    /* Disable the resizer and fixed heights on mobile so it scrolls naturally */
+    /* Disable layout split handles on small touch monitors */
     .resizer { display: none; }
     
     .analysis-panel { 
@@ -684,6 +745,13 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
         max-height: none; 
         overflow: visible; 
         padding: 15px; 
+        flex: none;
+    }
+    
+    .analysis-scroll {
+        overflow-y: visible !important;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     
     .equation-row { grid-template-columns: 1fr; }
@@ -692,15 +760,525 @@ select.filter-bar:focus { outline: none; box-shadow: 0 0 0 2px var(--glow-bright
     .model-footer button { min-width: 100px; padding: 10px 20px; }
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
-@media (max-width: 950px) {
-    .archive-body { padding: 0; overflow: auto; }
-    .archive-shell { width: 100vw; height: 100vh; border: 0; border-radius: 0;}
-    .archive-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-    .archive-sidebar { max-height: 250px; border-right: 0; border-bottom: 1px solid rgba(244, 223, 172, 0.14); }
-    .archive-stage { padding: 22px; overflow-y: auto; }
-    .model-view { height: auto; min-height: 720px; }
-    .model-card { padding: 28px 22px; }
-    .equation-row { grid-template-columns: 1fr; }
+#dynamic-model-target {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
 }
 
+.model-view.active-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.model-card {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+html,
+body.archive-body {
+    width: 100%;
+}
+
+.archive-body {
+    height: 100dvh;
+    min-height: 100dvh;
+}
+
+.archive-shell {
+    height: calc(100dvh - 52px);
+    max-height: 980px;
+}
+
+.archive-layout,
+.archive-sidebar,
+.archive-stage,
+#dynamic-model-target,
+.model-view.active-view,
+.model-card,
+.analysis-panel,
+.analysis-scroll {
+    min-height: 0;
+}
+
+.archive-sidebar {
+    overflow: hidden;
+}
+
+.model-tabs {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+.archive-stage {
+    flex: 1 1 auto;
+}
+
+#dynamic-model-target {
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.model-view,
+.model-view.active-view {
+    height: 100%;
+}
+
+.model-card {
+    overflow: hidden;
+}
+
+.graph-frame {
+    height: clamp(240px, 42%, 560px);
+    min-height: 170px;
+    max-height: 70%;
+    flex: 0 0 auto;
+}
+
+.analysis-panel {
+    flex: 1 1 auto;
+    min-height: 115px;
+    overflow: hidden;
+    padding: 0 24px 0 30px;
+}
+
+.analysis-scroll {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.analysis-scroll > :last-child {
+    margin-bottom: 0;
+}
+
+.resizer {
+    touch-action: none;
+    cursor: ns-resize;
+}
+
+.resizer-handle {
+    pointer-events: none;
+}
+
+@media (max-width: 950px) {
+    html,
+    body.archive-body {
+        height: auto;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .archive-body {
+        padding: 0;
+        background: var(--space-base);
+    }
+
+    .archive-shell {
+        width: 100%;
+        min-height: 100dvh;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .archive-topbar {
+        height: auto;
+        min-height: 58px;
+        padding: 12px 16px;
+    }
+
+    .archive-layout {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .archive-sidebar {
+        max-height: none;
+        overflow: visible;
+        flex: 0 0 auto;
+        padding: 14px 0 10px;
+    }
+
+    .search-slate {
+        height: 42px;
+        margin: 0 14px 12px;
+    }
+
+    .model-tabs {
+        flex: none;
+        min-height: 0;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 14px 8px;
+        gap: 10px;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .model-tab {
+        min-width: 170px;
+        min-height: 48px;
+        padding: 10px 14px;
+        white-space: normal;
+    }
+
+    .archive-stage {
+        height: auto;
+        min-height: 0;
+        flex: none;
+        padding: 16px 14px 24px;
+        overflow: visible;
+    }
+
+    #dynamic-model-target {
+        flex: none;
+        height: auto;
+        overflow: visible;
+    }
+
+    .model-view,
+    .model-view.active-view {
+        height: auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .model-card {
+        height: auto;
+        min-height: 0;
+        flex: none;
+        overflow: visible;
+        padding: 22px 16px;
+    }
+
+    .model-card::before {
+        inset: 8px;
+    }
+
+    .model-card::after {
+        font-size: 5rem;
+        right: 18px;
+        bottom: 16px;
+    }
+
+    .model-header {
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+    }
+
+    .model-header h1 {
+        font-size: clamp(1.15rem, 6vw, 1.55rem);
+    }
+
+    .star-rating {
+        font-size: 0.95rem;
+    }
+
+    .graph-frame {
+        height: clamp(230px, 56vw, 340px) !important;
+        min-height: 220px;
+        max-height: none;
+    }
+
+    .resizer {
+        display: none;
+    }
+
+    .analysis-panel {
+        flex: none;
+        min-height: 0;
+        height: auto;
+        overflow: visible;
+        padding: 15px 16px;
+        margin-bottom: 0;
+        font-size: 0.98rem;
+        line-height: 1.75;
+    }
+
+    .analysis-scroll {
+        height: auto;
+        max-height: none;
+        overflow: visible !important;
+        padding: 0;
+    }
+
+    .analysis-scroll h3 {
+        margin-top: 24px;
+    }
+
+    .lore-box {
+        padding: 14px 16px;
+    }
+
+    .equation-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .equation-slate {
+        overflow-x: auto;
+        min-height: 78px;
+    }
+
+    .model-footer {
+        height: auto;
+        margin-top: 18px;
+        padding-top: 8px;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .model-footer button {
+        min-width: 92px;
+        height: 40px;
+        padding: 8px 12px;
+    }
+
+    .page-dots {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .archive-stage {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .model-card {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .analysis-panel {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .model-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .page-dots {
+        order: -1;
+        width: 100%;
+    }
+}
+
+.embed-action-row {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 0 10px;
+    min-height: 38px;
+}
+
+.open-embed-btn {
+    position: static;
+    top: auto;
+    right: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    padding: 9px 16px;
+    background: rgba(22, 28, 72, 0.94);
+    color: var(--gold-bright);
+    border: 1px solid var(--gold-main);
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    line-height: 1.1;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.open-embed-btn:hover {
+    background: var(--gold-main);
+    color: #161C48;
+}
+
+/* Better breathing room between graph and explanation without wasting space. */
+.graph-frame {
+    margin-bottom: 10px;
+}
+
+.analysis-panel {
+    margin-top: 0;
+}
+
+/* Keep equations/images from creating sideways page scrolling. */
+.analysis-scroll,
+.analysis-scroll p,
+.lore-box,
+.equation-slate {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.analysis-scroll mjx-container {
+    display: inline !important;
+    max-width: none;
+    overflow: visible !important;
+    vertical-align: baseline;
+}
+
+.analysis-scroll mjx-container[display="true"] {
+    display: block !important;
+    max-width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    margin: 12px 0;
+}
+
+
+@media (max-width: 950px) {
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    body.archive-body {
+        min-height: 100dvh;
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 0;
+    }
+
+    .archive-shell {
+        width: 100%;
+        min-height: 100dvh;
+        height: auto;
+        overflow: visible;
+    }
+
+    .archive-layout {
+        min-height: 0;
+        height: auto;
+        overflow: visible;
+    }
+
+    .archive-sidebar {
+        max-height: none;
+    }
+
+    .model-tabs {
+        padding-right: 15px;
+        scroll-padding-left: 15px;
+    }
+
+    .archive-stage {
+        padding: 18px 14px 22px;
+        overflow: visible;
+    }
+
+    .model-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 760px;
+    }
+
+    .embed-action-row {
+        justify-content: center;
+        margin: 2px 0 12px;
+        min-height: 0;
+    }
+
+    .open-embed-btn {
+        width: 100%;
+        padding: 11px 14px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+    .graph-frame {
+        height: clamp(250px, 62vw, 370px) !important;
+        min-height: 240px;
+        margin-bottom: 16px;
+    }
+
+    .analysis-panel {
+        margin-top: 0;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .lore-box {
+        margin-bottom: 22px;
+        padding: 16px 18px;
+    }
+
+    .model-footer {
+        width: 100%;
+        max-width: 760px;
+        margin: 22px auto 0;
+        padding-bottom: 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .archive-topbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .archive-stage {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .model-card {
+        padding: 18px 12px;
+    }
+
+    .embed-action-row {
+        margin-bottom: 10px;
+    }
+
+    .graph-frame {
+        height: clamp(245px, 72vw, 330px) !important;
+        min-height: 230px;
+        margin-bottom: 14px;
+    }
+
+    .analysis-panel {
+        padding: 14px;
+    }
+
+    .lore-box {
+        padding: 14px 16px;
+    }
+
+    .model-footer button {
+        flex: 1;
+        max-width: 150px;
+    }
+}

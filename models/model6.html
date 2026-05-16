@@ -1,0 +1,57 @@
+<article id="model-6" class="model-view"> 
+    <div class="model-card book-card"> 
+        <header class="model-header"> 
+            <div> 
+                <p class="model-series">MODEL VI / EXPONENTIAL (MANDATORY FUNCTION 6)</p>
+                <h1>Height of the Concrete Path Curve as a Function of Distance</h1>
+            </div>
+            <div class="star-rating">★★★★★</div>
+        </header>
+
+        <div class="graph-frame">
+            <a href="https://www.desmos.com/calculator/f7alecjfof" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+            <iframe data-src="https://www.desmos.com/calculator/f7alecjfof?embed" title="Concrete Path Exponential graph"></iframe>
+        </div>
+
+        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+        <div class="analysis-panel">
+            <div class="analysis-scroll">
+                
+                <div class="lore-box">
+                    <p>“I chose this photo because the upward curve of the concrete path perfectly matches the shape of an exponential function. 
+                        I used the parent function \( y = 2^x \) as my starting model because it shares the same increasing trend as the physical structure.”
+                    </p>
+                </div>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Parent Function</span>\[ y = 2^x \]</div>
+                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = 1.38^{(x-15.6)} - 0.0053 \]</div>
+                </div>
+
+                <h3>Transformations Applied</h3>
+                <p>To model the curving pathway accurately against the image, transformations were applied to the parent function in the correct mathematical order:</p>
+                <ul class="genshin-list">
+                    <li><strong>Base Adjustment / Horizontal Stretch (\(b = 1.38\)):</strong> First, the base was changed from 2 to 1.38. This alters the rate of growth, creating a more gradual horizontal stretch so that the curvature perfectly matches the incline of the concrete path.</li>
+                    <li><strong>Horizontal Translation (\(d = 15.6\)):</strong> Next, the graph was shifted 15.6 units to the right to move the main growth curve away from the y-axis, aligning it with the position where the concrete path begins its clear upward sweep.</li>
+                    <li><strong>Vertical Translation (\(c = -0.0053\)):</strong> Finally, the graph was shifted 0.0053 units downward so that the lower, flatter section of the curve matches the baseline elevation of the path.</li>
+                </ul>
+
+                <h3>Physical Constraints</h3>
+                <p>The domain of this model is restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0 \le x \le 20\} \)</strong> because the concrete path in the photograph only spans between those horizontal coordinate limits. Beyond \( x = 20 \), the physical path is cut off by the staircase landing platform.</p>
+                
+                <p>While the parent function has a natural range of \( (0, \infty) \) and a horizontal asymptote along the x-axis, our transformations shift the horizontal asymptote down to <strong>\( y = -0.0053 \)</strong>. In this real-world context, the range changes significantly because it is bounded by our tracking endpoints rather than continuing to infinity. Evaluating the function at the boundaries reveals these physical constraints:</p>
+
+                <ul class="genshin-list">
+                    <li><strong>Starting Path Elevation:</strong> At \( x = 0 \), \( f(0) \approx 0.0013 \), marking where the path enters the left side of the camera frame.</li>
+                    <li><strong>Maximum Path Elevation:</strong> At \( x = 20 \), \( f(20) \approx 4.1201 \), where the concrete path meets the concrete staircase structure.</li>
+                </ul>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Contextual Domain</span>\[ D: \{x \in \mathbb{R} \mid 0 \le x \le 20\} \]</div>
+                    <div class="equation-slate"><span>Contextual Range</span>\[ R: \{y \in \mathbb{R} \mid 0.0013 \le y \le 4.1201\} \]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
