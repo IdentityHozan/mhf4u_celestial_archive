@@ -44,14 +44,14 @@
                 
                 <div class="model-tabs" id="tabContainer">
                     <button class="model-tab" data-model="1" data-category="absolute" onclick="showModel(1)"><span></span><b>I.</b> Roti Tissue Peak</button>
-                    <button class="model-tab" data-model="2" data-category="reciprocal" onclick="showModel(2)"><span></span><b>II.</b> Building Arch</button>
+                    <button class="model-tab" data-model="2" data-category="reciprocal" onclick="showModel(2)"><span></span><b>II.</b> Bus Chassis</button>
                     <button class="model-tab" data-model="3" data-category="polynomial" onclick="showModel(3)"><span></span><b>III.</b> KL Skyline</button>
                     <button class="model-tab" data-model="4" data-category="trigonometric" onclick="showModel(4)"><span></span><b>IV.</b> Chair Angle</button>
                     <button class="model-tab" data-model="5" data-category="root" onclick="showModel(5)"><span></span><b>V.</b> Logo Curve</button>
                     <button class="model-tab active" data-model="6" data-category="absolute" onclick="showModel(6)"><span></span><b>VI.</b> Concrete Curve</button>
-                    <button class="model-tab" data-model="7" data-category="exponential" onclick="showModel(7)"><span></span><b>VII.</b> Caduceus V-Shape </button>
-                    <button class="model-tab" data-model="8" data-category="sinusoidal" onclick="showModel(8)"><span></span><b>VIII.</b> Signage Wave</button>
-                    <button class="model-tab" data-model="9" data-category="logarithmic" onclick="showModel(9)"><span></span><b>IX.</b> Final Model</button>
+                    <button class="model-tab" data-model="7" data-category="exponential" onclick="showModel(7)"><span></span><b>VII.</b> a </button>
+                    <button class="model-tab" data-model="8" data-category="sinusoidal" onclick="showModel(8)"><span></span><b>VIII.</b> Caduceus V-Shape</button>
+                    <button class="model-tab" data-model="9" data-category="logarithmic" onclick="showModel(9)"><span></span><b>IX.</b> Curved Ceiling</button>
                 </div>
 
                 <select id="categoryFilter" class="filter-bar" onchange="filterModels()">
@@ -95,6 +95,95 @@
                                     <div class="equation-slate"><span>Transformed Equation</span>\[y=a|k(x-d)|+c\]</div>
                                 </div>
                                 <p>The <strong>domain</strong> is restricted to \(\{x \in \mathbb{R}\mid -15 \le x \le 15\}\) because the serving plate has physical width. The <strong>range</strong> is \(\{y \in \mathbb{R}\mid 0 \le y \le 60\}\), representing height from the table to the peak.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="model-2" class="model-view"> 
+                    <div class="model-card book-card"> 
+                        <header class="model-header"> 
+                            <div> 
+                                <p class="model-series">MODEL II / RECIPROCAL SQUARED</p>
+                                <h1>Height from Base of Bus Chassis as a Function of Horizontal Distance from the Leftmost Window Frame</h1>
+                            </div>
+                            <div class="star-rating">★★★★★</div>
+                        </header>
+
+                        <div class="graph-frame">
+                            <a href="https://www.desmos.com/calculator/32aoestq7u" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+                            <iframe data-src="https://www.desmos.com/calculator/32aoestq7u?embed" title="Attack on Titan Bus Reciprocal Squared Model"></iframe>
+                        </div>
+
+                        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+                        <div class="analysis-panel">
+                            <div class="analysis-scroll">
+
+                                <div class="lore-box">
+                                    "I chose this photo because it shows the Attack on Titan mural on the KL Hop-On Hop-Off bus, which connects to my experience in Malaysia and my interest in anime culture. While observing the Colossal Titan design, I noticed that the back of the cape drawing had a steep curved shape that gradually flattened, similar to the right branch of a reciprocal squared function."
+                                </div>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Parent Function</span>\[ y=\frac{1}{x^2} \]</div>
+                                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x)=\frac{1}{x^2-142}+3.3 \]</div>
+                                </div>
+
+                                <h3>Transformations Applied</h3>
+
+                                <p>
+                                    I selected the parent function \(y=\frac{1}{x^2}\) because its branch has a steep decrease near a vertical asymptote and then gradually levels out. This matched the back of the cape drawing on the bus, which drops quickly near the left side of the selected region before flattening toward the right.
+                                </p>
+
+                                <ul class="genshin-list">
+                                    <li><strong>Denominator Adjustment:</strong> The denominator was changed from \(x^2\) to \(x^2-142\). This creates vertical asymptotes at \(x=\pm\sqrt{142}\), or approximately \(x=\pm11.92\). Since the modeled shoulder segment lies on the right branch, the important asymptote is \(x\approx11.92\).</li>
+
+                                    <li><strong>Right-Branch Selection:</strong> I restricted the model to values just greater than \(x=11.92\), allowing only the right branch of the reciprocal squared curve to appear. This isolates the part of the function that matches the Titan’s shoulder.</li>
+
+                                    <li><strong>Vertical Translation (\(c=3.3\)):</strong> The graph was shifted 3.3 units upward so that the curve aligned with the shoulder’s height above the base of the bus chassis.</li>
+                                </ul>
+
+                                <p>
+                                    The final model is \(f(x)=\frac{1}{x^2-142}+3.3\). This equation fits the visible shoulder segment because it captures the steep curved drop near the asymptote and the gradual flattening of the shoulder as it extends to the right.
+                                </p>
+
+                                <h3>Domain, Range, and Asymptotic Behaviour</h3>
+
+                                <p>
+                                    The parent function \(y=\frac{1}{x^2}\) has a domain of \(x\neq0\), a range of \(y>0\), and a vertical asymptote at \(x=0\). In my transformed model, the denominator cannot equal zero, so the full transformed function is undefined at \(x=\pm\sqrt{142}\).
+                                </p>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Vertical Asymptotes</span>\[ x=\pm\sqrt{142}\approx\pm11.92 \]</div>
+                                    <div class="equation-slate"><span>Horizontal Asymptote</span>\[ y=3.3 \]</div>
+                                </div>
+
+                                <p>
+                                    For the real image, I restricted the domain to only the visible section of the Titan’s shoulder:
+                                </p>
+
+                                <p>
+                                    <strong>\[D:\{x\in\mathbb{R}\mid11.94\le x\le14.2\}\]</strong>
+                                </p>
+
+                                <p>
+                                    This domain begins slightly to the right of the vertical asymptote at \(x\approx11.92\), avoiding undefined values while still capturing the steep start of the shoulder curve. It ends at \(x=14.2\), where the selected shoulder segment stops in the photograph.
+                                </p>
+
+                                <p>
+                                    Since the function is continuous and decreasing on this restricted interval, the maximum height occurs at \(x=11.94\), and the minimum height occurs at \(x=14.2\).
+                                </p>
+
+                                <ul class="genshin-list">
+                                    <li><strong>Maximum Height:</strong> At \(x=11.94\), \(f(11.94)\approx5.07\).</li>
+                                    <li><strong>Minimum Height:</strong> At \(x=14.2\), \(f(14.2)\approx3.32\).</li>
+                                </ul>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate"><span>Restricted Domain</span>\[ 11.94\le x\le14.2 \]</div>
+                                    <div class="equation-slate"><span>Approximate Range</span>\[ 3.32\le y\le5.07 \]</div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -231,7 +320,7 @@
                     </div>
                 </article>
 
-                <article id="model-7" class="model-view">
+                <article id="model-8" class="model-view">
                     <div class="model-card book-card">
                         <header class="model-header">
                             <div>
@@ -271,6 +360,172 @@
                                 <p>The domain is strictly restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0.95 \le x \le 1.15\} \)</strong>. This restriction is contextually justified because the "V" is only a small physical component of the total Caduceus graphic. By limiting the domain to a 0.2 unit span (approx. 8.5 cm in real-world distance), I ensure the model does not extend into space where the function no longer matches the physical object.</p>
                                 <p>The range is <strong>\( R: \{y \in \mathbb{R} \mid 2 \le y \le 2.13\} \)</strong>, determined by evaluating the function at the domain endpoints. This range reflects the actual vertical height of the lines forming the V-shape, beginning exactly 2 vertical units above the floor.</p>
                                 
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="model-9" class="model-view"> 
+                    <div class="model-card book-card"> 
+                        <header class="model-header"> 
+                            <div> 
+                                <p class="model-series">MODEL IX / SQUARE ROOT</p>
+                                <h1>Height of the Curved Ceiling Recess as a Function of Horizontal Displacement from Right Foot</h1>
+                            </div>
+                            <div class="star-rating">★★★★★</div>
+                        </header>
+
+                        <div class="graph-frame">
+                            <a href="https://www.desmos.com/calculator/jur427kop6" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+                            <iframe data-src="https://www.desmos.com/calculator/jur427kop6?embed" title="Curved Ceiling Recess Square Root Model"></iframe>
+                        </div>
+
+                        <div class="resizer" title="Drag to resize">
+                            <div class="resizer-handle"></div>
+                        </div>
+
+                        <div class="analysis-panel">
+                            <div class="analysis-scroll">
+
+                                <div class="lore-box">
+                                    "I chose this photograph because I took it during the Merdeka celebration, and I wanted this mathematical model to represent Malaysia, its culture, and the architectural details surrounding the event. While analyzing the ceiling structure, I noticed that the curved recess closely resembled the shape of a square root function because of its rapid initial curve followed by a gradual flattening. As a result, I selected the parent function \(y=\sqrt{x}\) as the foundation for my model."
+                                </div>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate">
+                                        <span>Parent Function</span>
+                                        \[ y=\sqrt{x} \]
+                                    </div>
+
+                                    <div class="equation-slate">
+                                        <span>Transformed Model</span>
+                                        \[
+                                        f(x)=0.99\sqrt{-\frac{1}{2}(x-4)}+7
+                                        \]
+                                    </div>
+                                </div>
+
+                                <h3>Transformations Applied</h3>
+
+                                <p>
+                                    The parent square root function normally begins at the origin and increases toward the right. However, the ceiling recess in the image curves toward the left and is positioned significantly higher than the parent graph. To accurately align the mathematical model with the real architectural feature, multiple transformations were applied in a logical sequence.
+                                </p>
+
+                                <ul class="genshin-list">
+
+                                    <li>
+                                        <strong>Horizontal Reflection:</strong>
+                                        The negative sign inside the radical reflects the graph across the vertical axis, causing the square root curve to open toward the left instead of the right. This matched the orientation of the ceiling recess visible in the photograph.
+                                    </li>
+
+                                    <li>
+                                        <strong>Horizontal Stretch by a Factor of 2:</strong>
+                                        The coefficient \(-\frac12\) inside the radical horizontally stretches the graph, allowing the curve to widen and more accurately follow the gradual curvature of the recess across the ceiling.
+                                    </li>
+
+                                    <li>
+                                        <strong>Horizontal Translation (\(d=4\)):</strong>
+                                        The expression \((x-4)\) shifts the endpoint of the square root graph 4 units to the right. In the context of this model, the horizontal axis represents displacement measured from my right foot, allowing the endpoint of the curve to align with the architectural boundary of the recess.
+                                    </li>
+
+                                    <li>
+                                        <strong>Vertical Stretch (\(a=0.99\)):</strong>
+                                        The multiplier 0.99 slightly adjusts the height of the graph. Since the value is close to 1, the overall shape remains similar to the parent function while still refining the curve enough to better match the photograph.
+                                    </li>
+
+                                    <li>
+                                        <strong>Vertical Translation (\(c=7\)):</strong>
+                                        The graph was translated 7 units upward so that the entire curve aligned with the elevated ceiling structure in the image.
+                                    </li>
+
+                                </ul>
+
+                                <p>
+                                    Through these transformations, the final equation became 
+                                    \(f(x)=0.99\sqrt{-\frac{1}{2}(x-4)}+7\), 
+                                    which closely follows both the direction and curvature of the recessed architectural feature.
+                                </p>
+
+                                <h3>Domain, Range, and Restrictions</h3>
+
+                                <p>
+                                    The parent square root function \(y=\sqrt{x}\) has a domain of \(x\ge0\) and a range of \(y\ge0\). However, because my transformed model contains a reflected and translated radical expression, the restrictions must be re-evaluated.
+                                </p>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate">
+                                        <span>Radicand Restriction</span>
+                                        \[
+                                        -\frac12(x-4)\ge0
+                                        \]
+                                    </div>
+
+                                    <div class="equation-slate">
+                                        <span>Valid x-values</span>
+                                        \[
+                                        x\le4
+                                        \]
+                                    </div>
+                                </div>
+
+                                <p>
+                                    Since square root functions cannot contain negative values inside the radical, the graph cannot extend beyond \(x=4\). At \(x=4\), the graph reaches its endpoint because the radicand becomes exactly zero.
+                                </p>
+
+                                <p>
+                                    The restricted domain for the physical model is:
+                                </p>
+
+                                <p>
+                                    <strong>
+                                    \[
+                                    D:\{x\in\mathbb{R}\mid3.24\le x\le4\}
+                                    \]
+                                    </strong>
+                                </p>
+
+                                <p>
+                                    This restriction was chosen because the equation only models the visible portion of the ceiling recess shown in the photograph. Extending the graph further would no longer accurately represent the real architectural structure.
+                                </p>
+
+                                <p>
+                                    The range was determined by evaluating the function over the restricted interval. Since the graph decreases from left to right across this domain, the maximum value occurs at the left endpoint and the minimum occurs at the square root endpoint at \(x=4\).
+                                </p>
+
+                                <ul class="genshin-list">
+                                    <li>
+                                        <strong>Maximum Height:</strong>
+                                        At \(x=3.24\),
+                                        \[
+                                        f(3.24)\approx7.6103
+                                        \]
+                                    </li>
+
+                                    <li>
+                                        <strong>Minimum Height:</strong>
+                                        At \(x=4\),
+                                        \[
+                                        f(4)=7
+                                        \]
+                                    </li>
+                                </ul>
+
+                                <div class="equation-row">
+                                    <div class="equation-slate">
+                                        <span>Restricted Domain</span>
+                                        \[
+                                        3.24\le x\le4
+                                        \]
+                                    </div>
+
+                                    <div class="equation-slate">
+                                        <span>Approximate Range</span>
+                                        \[
+                                        7\le y\le7.6103
+                                        \]
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
