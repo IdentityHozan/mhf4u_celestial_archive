@@ -1282,3 +1282,49 @@ body.archive-body {
         max-width: 150px;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1180px) {
+    .archive-body {
+        overflow: hidden;
+    }
+
+    .archive-shell,
+    .archive-layout {
+        height: 100dvh;
+        min-height: 0;
+    }
+
+    .archive-stage {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 90px;
+    }
+
+    #dynamic-model-target,
+    .model-view.active-view,
+    .model-card {
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+    }
+
+    .analysis-panel,
+    .analysis-scroll {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .resizer {
+        display: none;
+    }
+
+    .graph-frame {
+        height: clamp(300px, 42vh, 460px);
+    }
+
+    .model-footer {
+        position: sticky;
+        bottom: 0;
+    }
+}
