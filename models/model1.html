@@ -1,0 +1,91 @@
+<article id="model-1" class="model-view"> 
+    <div class="model-card book-card"> 
+        <header class="model-header"> 
+            <div> 
+                <p class="model-series">MODEL I / QUARTIC POLYNOMIAL (MANDATORY FUNCTION 1)</p>
+                <h1>Height of the Mountain from the Handrail as a Function of Horizontal Displacement from the Pillar</h1>
+            </div>
+            <div class="star-rating">★★★★★</div>
+        </header>
+
+        <div class="graph-frame">
+            <a href="https://www.desmos.com/calculator/s5m7k3ugvc" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+            <iframe data-src="https://www.desmos.com/calculator/s5m7k3ugvc?embed" title="Mountain Ridge Quartic Model graph"></iframe>
+        </div>
+
+        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+        <div class="analysis-panel">
+            <div class="analysis-scroll">
+
+                <div class="lore-box">
+                    <p>“I chose this photo because I had a great time in Genting with my friends, and I wanted to model the natural curves shown by the mountain ridge. 
+                        To mathematically represent the smooth undulations and peaks of the landscape, I selected a quartic function as my foundation, finding that a fourth-degree polynomial was ideal for describing the rolling summit and descending slopes.”
+                    </p>
+                </div>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Parent Function</span>\[ y = x^4 \]</div>
+                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = -\frac{3}{5}(x + 1.41)(x + 0.41)^2(x - 0.52) + 0.528 \]</div>
+                </div>
+
+                <h3>Transformations Applied</h3>
+                <p>
+                    The parent quartic function normally opens upward from the origin and slopes away symmetrically. To match the specific, non-symmetrical rolling terrain of the mountain ridge, multiple transformations were applied to the parent function in a strict mathematical sequence:
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Vertical Reflection:</strong>
+                        First, a vertical reflection across the horizontal axis was applied by introducing a negative sign to the leading coefficient. This flips the infinite branches of the quartic function downward to match the descending landscape profiles.
+                    </li>
+                    <li>
+                        <strong>Vertical Compression:</strong>
+                        Next, a vertical compression factor of \(\frac{3}{5}\) was applied. This steps down the vertical scaling, flattening the naturally steep arms of the polynomial curve so that it can smoothly follow the gradual, rolling crest of the mountains without creating sharp, unrealistic peaks.
+                    </li>
+                    <li>
+                        <strong>Horizontal Translations (Root Positioning):</strong>
+                        The independent tracking variable was horizontally shifted across distinct intervals to position the polynomial roots at \( x = -1.41 \), \( x = 0.52 \), and a double root tangency point at \( x = -0.41 \). The squared factor group \( (x + 0.41)^2 \) forces the curve to smoothly bounce off its baseline exactly 0.41 kilometers to the left of the central reference pillar, accurately recreating the physical valley dip of the landscape.
+                    </li>
+                    <li>
+                        <strong>Vertical Translation:</strong>
+                        Finally, a vertical translation of 0.528 units upward was executed, adding 0.528 directly to the function. This lifts the entire model away from the horizontal axis to align the function's baseline height with the actual physical elevation of the mountain ridge high above the viewing platform handrail, where both coordinate axes map distance uniformly in kilometers (\(\text{km}\)).
+                    </li>
+                </ul>
+
+                <h3>Physical Constraints and Real-World Restrictions</h3>
+                <p>
+                    While the parent quartic function \( y = x^4 \) extends its domain and range infinitely across the coordinate plane, the physical mountain range is bounded by the architectural columns and eaves of the viewing terrace. 
+                </p>
+
+                <p>The domain of this model is strictly restricted to isolate the primary segment of the mountain ridge clearly visible on the left side of the frame:</p>
+                <p><strong>\[ D: \{x \in \mathbb{R} \mid -0.96 \le x \le 0.19\} \]</strong></p>
+
+                <p>
+                    This restriction suppresses the natural tendency of the polynomial branches to extend downwards continuously, ensuring the mathematical model only describes the active horizon line. Evaluating the function at the boundaries of this continuous interval yields our precise range limits:
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Left Endpoint Elevation:</strong> At the leftmost tracking boundary where \( x = -0.96 \), the function evaluates to an initial profile height of approximately \( f(-0.96) \approx 0.6489\text{ km} \).
+                    </li>
+                    <li>
+                        <strong>Minimum Ridge Elevation:</strong> The absolute lowest valley boundary of the active ridge curve occurs at the local tangent turning point where \( x = -0.41 \), evaluating to an elevation of exactly \( f(-0.41) = 0.528\text{ km} \) above the handrail baseline.
+                    </li>
+                    <li>
+                        <strong>Maximum Ridge Elevation:</strong> As the terrain sweeps upward toward the right, evaluating the function at the rightmost boundary edge where \( x = 0.19 \) yields the maximum boundary peak height of approximately \( f(0.19) \approx 0.6420\text{ km} \).
+                    </li>
+                </ul>
+
+                <p>
+                    By enforcing these strict constraints, the infinite properties of the polynomial are altered into a contextually logical bounded interval. This cuts off the mathematical graph precisely where the mountain ridge disappears behind the main structural terrace pillar, ensuring a high-precision visual fit.
+                </p>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Contextual Domain</span>\[ -0.96 \le x \le 0.19 \]</div>
+                    <div class="equation-slate"><span>Contextual Range</span>\[ 0.528 \le y \le 0.6489 \]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
