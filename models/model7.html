@@ -9,87 +9,163 @@
         </header>
 
         <div class="graph-frame">
-            <a href="https://www.desmos.com/calculator/hmmvhyzz3u" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
-            <iframe data-src="https://www.desmos.com/calculator/hmmvhyzz3u?embed" title="Mural Painting Logarithmic Model graph"></iframe>
+            <a href="https://www.desmos.com/calculator/ngnabrzyxn" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+            <iframe data-src="https://www.desmos.com/calculator/ngnabrzyxn?embed" title="Mural Painting Logarithmic Model graph"></iframe>
         </div>
 
-        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+        <div class="resizer" title="Drag to resize">
+            <div class="resizer-handle"></div>
+        </div>
 
         <div class="analysis-panel">
             <div class="analysis-scroll">
 
                 <div class="lore-box">
-                    <p>“I chose this photo because it captures the vibrant geometric mural layout on the exterior building wall, showcasing the artistic urban design elements around campus. 
-                        While tracing the upper edge of the yellow color field block near the window frame, I noticed the line climbs rapidly near the vertical axis and then dramatically flattens out. 
-                        This unique curve path behaves identically to the initial growth surge of a base-10 logarithm, making the parent function \( y = \log(x) \) a natural match.”
+                    <p>
+                        “I chose this photo because the wall painting has a curved edge that rises quickly at first and then slowly flattens out. 
+                        This shape reminded me of a logarithmic function because logarithmic graphs increase rapidly near the start and then grow more gradually. 
+                        Because of this, I selected the parent function \( y=\log(x) \) as the basis for this model.”
                     </p>
                 </div>
 
                 <div class="equation-row">
-                    <div class="equation-slate"><span>Parent Function</span>\[ y = \log(x) \]</div>
-                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = 0.35\log(41(x + 0.0122)) + 3.98 \]</div>
+                    <div class="equation-slate">
+                        <span>Parent Function</span>
+                        \[ y=\log(x) \]
+                    </div>
+                    <div class="equation-slate">
+                        <span>Transformed Model</span>
+                        \[ f(x)=\frac{7}{20}\log(41(x+0.0122))+3.98 \]
+                    </div>
                 </div>
 
                 <h3>Transformations Applied</h3>
+
                 <p>
-                    The natural parent base-10 logarithm rises far too slowly and crosses the horizontal axis at \( x = 1 \). To conform the curve to the exact boundaries of the yellow mural artwork, multiple transformations were applied in a strict mathematical sequence:
+                    The parent logarithmic function \(y=\log(x)\) starts near the y-axis and increases slowly as x becomes larger. 
+                    To make the curve match the wall painting, I adjusted the steepness, horizontal placement, and vertical height of the graph.
                 </p>
 
                 <ul class="genshin-list">
                     <li>
-                        <strong>Horizontal Compression:</strong>
-                        First, a massive horizontal compression factor of \( k = 41 \) was applied inside the input argument group. This squishes the logarithmic curve horizontally, forcing it to achieve its sharp vertical ascent over a highly accelerated distance window to mimic the structural transition of the wall painting lines.
+                        <strong>Vertical Compression (\(a=\frac{7}{20}\)):</strong>
+                        The value \(a=\frac{7}{20}\), or \(0.35\), compresses the graph vertically. 
+                        This makes the curve less steep so it better matches the gradual rise of the painted wall curve.
                     </li>
+
                     <li>
-                        <strong>Vertical Compression:</strong>
-                        Next, a vertical compression factor of 0.35 was introduced to scale the function's rate of growth. This multiplier scales down the overall vertical amplitude of the curve, keeping the trajectory flat enough to smoothly match the subtle, low-profile slope of the yellow section baseline.
+                        <strong>Horizontal Compression (\(k=41\)):</strong>
+                        The value \(k=41\) compresses the logarithmic graph horizontally. 
+                        This makes the curve rise quickly over a short horizontal distance, which matches the sharper starting section of the wall painting. 
                     </li>
+
                     <li>
-                        <strong>Horizontal Translation (\(d = -0.0122\)):</strong>
-                        The function was then translated 0.0122 units to the left, which is explicitly isolated inside the factored parameter grouping as \( (x + 0.0122) \). This slight horizontal shift slides the curve's steep vertical boundary line leftward to align perfectly with the physical edge of the window framing panel. On this axis, horizontal positions measure decimeters (\(1\text{ dm} = 10\text{ cm}\)) relative to the vertical line running down through my classmate's left foot base.
+                        <strong>Horizontal Translation (\(d=-0.0122\)):</strong>
+                        Since the logarithm contains \((x+0.0122)\), the graph shifts \(0.0122\) units to the left. 
+                        In the form \(a\log(k(x-d))+c\), this means \(d=-0.0122\), because \(x+0.0122=x-(-0.0122)\). 
+                        On this grid, the x-axis represents horizontal displacement from the left foot base, so this small shift helps align the beginning of the curve with the painted edge.
                     </li>
+
                     <li>
-                        <strong>Vertical Translation (\(c = 3.98\)):</strong>
-                        Finally, a vertical translation of 3.98 units upward was executed to elevate the entire graph. This major shift lifts the baseline of the logarithmic curve away from the horizontal axis to track alongside the yellow design panels high above the pavement. On this axis, each unit represents approximately \(40\text{ cm}\) in real space (calibrated because my classmate's height of \(162\text{ cm}\) measures exactly \(4.1\) units in the photograph), matching the physical length of a small travel guitar.
+                        <strong>Vertical Translation (\(c=3.98\)):</strong>
+                        The \(+3.98\) shifts the entire graph upward. 
+                        This places the logarithmic curve at the correct height on the wall painting instead of keeping it near the x-axis. 
+                        On the vertical axis, each graph unit represents approximately \(39.5\text{ cm}\), rounded to about \(40\text{ cm}\), because my height of \(162\text{ cm}\) spans about \(4.1\) vertical units in the photograph. 
+                        This is close to the width of one small guitar, so the y-axis scale helps connect the graph units to a real-world measurement.
                     </li>
                 </ul>
 
                 <h3>Domain, Range, and Asymptotic Behaviour</h3>
+
                 <p>
-                    The parent function \( y = \log(x) \) contains a natural vertical asymptote at the y-axis line (\( x = 0 \)) because log values are mathematically undefined for inputs less than or equal to zero. After distributing our specific structural transformations, this boundary shift places our operational vertical asymptote at exactly \( x = -0.0122 \).
+                    The parent function \(y=\log(x)\) is only defined when the input of the logarithm is greater than zero. 
+                    For this model, the input is:
+                </p>
+
+                <p>
+                    <strong>\[ 41(x+0.0122)>0 \]</strong>
+                </p>
+
+                <p>
+                    Since \(41\) is positive, the restriction becomes:
+                </p>
+
+                <p>
+                    <strong>\[ x+0.0122>0 \]</strong>
+                </p>
+
+                <p>
+                    Therefore, the function is only defined when:
+                </p>
+
+                <p>
+                    <strong>\[ x>-0.0122 \]</strong>
+                </p>
+
+                <p>
+                    This means the vertical asymptote is located at \(x=-0.0122\). 
+                    The graph cannot touch or pass this line because the logarithm would become undefined.
                 </p>
 
                 <div class="equation-row">
-                    <div class="equation-slate"><span>Vertical Asymptote</span>\[ x = -0.0122 \]</div>
-                    <div class="equation-slate"><span>Horizontal Baseline</span>\[ y = 3.98 \]</div>
+                    <div class="equation-slate">
+                        <span>Vertical Asymptote</span>
+                        \[ x=-0.0122 \]
+                    </div>
+                    <div class="equation-slate">
+                        <span>Vertical Shift</span>
+                        \[ y=3.98 \]
+                    </div>
                 </div>
 
                 <p>
-                    The domain is strictly restricted to isolate the exact regional window where the yellow painting features actively track across the concrete wall face:
+                    The domain is restricted to the part of the graph that actually traces the visible wall painting curve:
                 </p>
-                <p><strong>\[ D: \{x \in \mathbb{R} \mid -0.005 \le x \le 0.5\} \]</strong></p>
 
                 <p>
-                    This restriction cuts off the curve perfectly before it hits the vertical asymptote discontinuity line on the left, keeping the function completely real and continuous over our entire observation segment. Evaluating these precise outer domain boundaries reveals our real-world range constraints:
+                    <strong>\[ D:\{x\in\mathbb{R}\mid -0.005\le x\le0.5\} \]</strong>
+                </p>
+
+                <p>
+                    This restriction keeps the model on the visible section of the wall painting. 
+                    It also prevents the graph from moving too close to the vertical asymptote or extending into areas where there is no painted curve to model.
+                </p>
+
+                <p>
+                    Since the logarithmic function increases over this restricted interval, the minimum and maximum values occur at the endpoints.
                 </p>
 
                 <ul class="genshin-list">
                     <li>
-                        <strong>Minimum Curve Height:</strong> At the leftmost tracking boundary adjacent to the window molding frame where \( x = -0.005 \), the function evaluates to an approximate elevation of \( y \approx 3.7944 \) units above the baseline.
+                        <strong>Minimum Curve Height:</strong>
+                        At \(x=-0.005\), the function gives \(f(-0.005)\approx3.7944\).
                     </li>
+
                     <li>
-                        <strong>Maximum Curve Height:</strong> As the yellow painting block extends out toward the right side of the panel where \( x = 0.5 \), the logarithmic line curves up to reach an approximate peak elevation boundary of \( y \approx 4.4428 \) units.
+                        <strong>Maximum Curve Height:</strong>
+                        At \(x=0.5\), the function gives \(f(0.5)\approx4.4428\).
                     </li>
                 </ul>
 
                 <p>
-                    This strict boundary control breaks down the infinite domain of the parent log function into a logical, bounded space. It terminates the mathematical curve exactly where the physical paint boundaries stop on the background wall panels, completing a highly accurate visual fit.
+                    Therefore, the approximate range of the model is:
+                </p>
+
+                <p>
+                    <strong>\[ R:\{y\in\mathbb{R}\mid 3.7944\le y\le4.4428\} \]</strong>
                 </p>
 
                 <div class="equation-row">
-                    <div class="equation-slate"><span>Contextual Domain</span>\[ -0.005 \le x \le 0.5 \]</div>
-                    <div class="equation-slate"><span>Contextual Range</span>\[ 3.7944 \le y \le 4.4428 \]</div>
+                    <div class="equation-slate">
+                        <span>Contextual Domain</span>
+                        \[ -0.005\le x\le0.5 \]
+                    </div>
+                    <div class="equation-slate">
+                        <span>Contextual Range</span>
+                        \[ 3.7944\le y\le4.4428 \]
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
