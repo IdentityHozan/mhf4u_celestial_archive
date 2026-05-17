@@ -1142,20 +1142,77 @@ body.archive-body {
 }
 
 .analysis-scroll mjx-container {
-    display: inline !important;
-    max-width: none;
-    overflow: visible !important;
-    vertical-align: baseline;
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
-.analysis-scroll mjx-container[display="true"] {
-    display: block !important;
-    max-width: 100%;
+.analysis-scroll mjx-container[display="true"],
+.mjx-container[jax="CHTML"][display="true"] {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 14px 0;
+    
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    margin: 12px 0;
+    padding: 8px 0;
 }
 
+.analysis-scroll mjx-container[display="true"]::-webkit-scrollbar,
+.mjx-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.analysis-scroll mjx-container[display="true"]::-webkit-scrollbar-track,
+.mjx-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.analysis-scroll mjx-container[display="true"]::-webkit-scrollbar-thumb,
+.mjx-container::-webkit-scrollbar-thumb {
+    background: rgba(205, 166, 113, 0.35); 
+    border-radius: 2px;
+}
+
+.equation-slate {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.equation-slate mjx-container {
+    overflow: hidden !important;
+}
+ 
+.equation-slate mjx-container[jax="CHTML"][display="true"] {
+    display: flex !important;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.mjx-container {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 5px 0;
+}
+
+.mjx-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.mjx-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.mjx-container::-webkit-scrollbar-thumb {
+    background: rgba(184, 134, 11, 0.3); 
+    border-radius: 2px;
+}
 
 @media (max-width: 950px) {
     html,
@@ -1328,3 +1385,4 @@ body.archive-body {
         bottom: 0;
     }
 }
+

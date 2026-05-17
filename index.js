@@ -19,7 +19,7 @@ async function showModel(idNumber) {
 
     // Set programmatic hash location tracking in the browser URL bar
     if (history.replaceState) {
-        history.replaceState(null, '', `#model-${idNumber}`);
+        history.replaceState(null, '', `#model${idNumber}`);
     }
 
     // Re-render active dots to match the current pagination placement

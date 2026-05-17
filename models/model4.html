@@ -1,0 +1,99 @@
+<article id="model-4" class="model-view"> 
+    <div class="model-card book-card"> 
+        <header class="model-header"> 
+            <div> 
+                <p class="model-series">MODEL IV / SECANT (MANDATORY FUNCTION 4)</p>
+                <h1>Vertical Displacement of the Mural as a Function of Horizontal Displacement From Right Shoulder</h1>
+            </div>
+            <div class="star-rating">★★★★★</div>
+        </header>
+
+        <div class="graph-frame">
+            <a href="https://www.desmos.com/calculator/dm2ynv7ffd" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+            <iframe data-src="https://www.desmos.com/calculator/dm2ynv7ffd?embed" title="Totem Pole Secant Model graph"></iframe>
+        </div>
+
+        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+        <div class="analysis-panel">
+            <div class="analysis-scroll">
+                <div class="lore-box">
+                    <p>
+                        “I chose this photo because the mural behind me features curved elements that resemble the branches of a reciprocal trigonometric function. 
+                        While observing the orange outline along the top arched sections of the mural, I noticed that the curve rises sharply near the outer parts and follows the general shape of a secant function. 
+                        Because of this, I selected the parent function \( y=\sec(x) \) as the foundation for this model.”
+                    </p>
+                </div>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Parent Function</span>\[ y = \sec(x) \]</div>
+                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = 0.99\sec\left(\frac{5}{3}(x - 1.89)\right) + 2.79 \]</div>
+                </div>
+
+                <h3>Transformations Applied</h3>
+                <p>
+                    The parent secant function normally has repeating branches separated by vertical asymptotes. To make the curve match the visible arched outlines of the mural, transformations were applied to the parent function in strict mathematical order:
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Vertical Compression (\(a = 0.99\)):</strong>
+                        Applied first, the value of 0.99 slightly adjusts the height of the secant branch. Since this value is very close to 1, the graph keeps almost the same shape as the parent function while allowing the curve to align more closely with the top of the mural outline.
+                    </li>
+                    <li>
+                        <strong>Horizontal Compression (\(k = \frac{5}{3}\)):</strong>
+                        The factor of \(\frac{5}{3}\) compresses the graph horizontally. This makes the secant branch narrower and steeper, which helps it accurately follow the sharper upward curves of the background panels.
+                    </li>
+                    <li>
+                        <strong>Horizontal Translation (\(d = 1.89\)):</strong>
+                        The factored expression shifts the graph 1.89 units to the right, moving the secant branch away from the y-axis to align with the mural curve sections being modeled. On this plane, each horizontal grid step represents exactly \(40\text{ cm}\) in real space (calibrated because the \(2.4\text{ m}\) wide background canvas spans \(6\) units), matching the width of a standard desktop computer keyboard.
+                    </li>
+                    <li>
+                        <strong>Vertical Translation (\(c = 2.79\)):</strong>
+                        Finally, the graph is shifted 2.79 units upward. This places the secant branch at the correct vertical height relative to my shoulder-level baseline. Each vertical grid unit represents approximately \(52.4\text{ cm}\), calibrated because my physical height of \(178\text{ cm}\) measures exactly \(3.4\) units in the photograph, which corresponds to the height of a standard carry-on suitcase.
+                    </li>
+                </ul>
+
+                <h3>Domain, Range, and Restrictions</h3>
+                <p>
+                    The parent function \( y=\sec(x) \) is undefined wherever \( \cos(x)=0 \), creating vertical asymptotes at odd multiples of \(\frac{\pi}{2}\). After transformations are executed, the locations of these mathematical discontinuities shift. On our localized workspace branch, the operational asymptotes are located at approximately \( x \approx 0.95 \) and \( x \approx 2.83 \).
+                </p>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Vertical Asymptotes</span>\[ x \approx 0.95, \quad x \approx 2.83 \]</div>
+                    <div class="equation-slate"><span>Baseline Shift</span>\[ y = 2.79 \]</div>
+                </div>
+
+                <p>
+                    Since the mural only contains limited visible curved features, the model must be restricted to the specific parts of the graph that actually trace the artwork. The selected domain uses two intervals because the model follows both the left and right arched sections symmetrically:
+                </p>
+
+                <p><strong>\[ D: \{x \in \mathbb{R} \mid -4.36 \le x \le -3.35 \cup 3.3 \le x \le 4.36\} \]</strong></p>
+
+                <p>
+                    These restrictions prevent the secant graph from continuing infinitely or entering areas where there is no physical mural curve to represent. Within these intervals, the model remains continuous and follows only the visible orange outlines.
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Minimum Curve Height:</strong>
+                        At the lower inner parts of the traced sections, around \(x=3.3\) and \(x=-3.35\), the function evaluates to an approximate vertical displacement of \(f(x)\approx4.1912\).
+                    </li>
+                    <li>
+                        <strong>Maximum Curve Height:</strong>
+                        Near the outer edges where the shape sweeps upward, around \(x=4.36\) and \(x=-4.36\), the function reaches an approximate vertical displacement of \(f(x)\approx6.8145\).
+                    </li>
+                </ul>
+
+                <p>
+                    Therefore, the infinite behaviour of the original parent function is limited to a realistic interval that matches the physical boundaries of the artwork. Instead of representing the entire natural secant graph, this comparison highlights how the real-world model cuts off the mathematical curves precisely where the physical lines of the mural paneling terminate.
+                </p>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Contextual Domain</span>\[ D: \{x \in \mathbb{R} \mid -4.36 \le x \le -3.35 \cup 3.3 \le x \le 4.36\} \]</div>
+                    <div class="equation-slate"><span>Contextual Range</span>\[ R: \{y \in \mathbb{R} \mid 4.1912 \le y \le 6.8145\} \]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
