@@ -1,8 +1,8 @@
-<article id="model-3" class="model-view"> 
+<article id="model-1" class="model-view"> 
     <div class="model-card book-card"> 
         <header class="model-header"> 
             <div> 
-                <p class="model-series">MODEL I/ RATIONAL (MANDATORY FUNCTION 1)</p>
+                <p class="model-series">MODEL I / RATIONAL (MANDATORY FUNCTION 1)</p>
                 <h1>Vertical Displacement from Mid Quadricep to Chair Curve as a Function of Horizontal Displacement from the Left Leg</h1>
             </div>
             <div class="star-rating">★★★★★</div>
@@ -65,30 +65,36 @@
                 </div>
 
                 <p>
-                    The domain is strictly restricted to isolate only the specific curved parts of the backrest that can be accurately represented by the 1/x function:
+                    The domain is strictly restricted to isolate only the specific curved parts of the backrest that can be accurately represented by the reciprocal function while avoiding the vertical asymptote at \(x=0.03\):
                 </p>
-                <p><strong>\[ D: \{x \in \mathbb{R} \mid -0.7 < x < 0.9\} \]</strong></p>
+                <p><strong>\[ D: \{x \in \mathbb{R} \mid -0.7 \le x \le -0.11875 \cup 0.268 \le x \le 0.9\} \]</strong></p>
 
                 <p>
-                    Because this restricted domain explicitly spans across the vertical asymptote boundary at \( x = 0.03 \), the function exhibits its classic asymptotic split within our visible window. This unique mathematical property allows a single equation to represent both independent sloping sides of the chair's top rail structure simultaneously, cutting off cleanly before entering empty space where the chair ends.
+                    The original unrestricted reciprocal model would continue infinitely near the asymptote, but the actual chair curve does not form an infinite spike. Therefore, the traced branch is clipped before it reaches the discontinuity. This keeps the two visible parts of the chair frame while excluding the undefined value at \(x=0.03\) and removing empty space that does not belong to the plastic molding.
                 </p>
 
                 <ul class="genshin-list">
                     <li>
-                        <strong>Minimum Curve Height:</strong> Evaluating the outer limits of our trace segments away from the central split reveals an approximate minimum baseline vertical displacement of \( y \approx 0.5 \).
+                        <strong>Right-Branch Minimum Height:</strong> At \(x=0.268\), the model gives \(f(0.268)\approx0.5\), creating the lowest visible part of the traced chair curve.
                     </li>
                     <li>
-                        <strong>Maximum Curve Height:</strong> As the reciprocal branches curve upward toward the vertical asymptote discontinuity, the tracking lines reach an approximate peak vertical displacement boundary of \( y \approx 1.8 \).
+                        <strong>Right-Branch Upper Boundary:</strong> At \(x=0.9\), the model gives \(f(0.9)\approx0.863\), where the right trace naturally ends on the frame.
+                    </li>
+                    <li>
+                        <strong>Left-Branch Lower Boundary:</strong> At \(x=-0.7\), the model gives \(f(-0.7)\approx1.163\), which begins the upper-left visible curve.
+                    </li>
+                    <li>
+                        <strong>Left-Branch Maximum Height:</strong> At \(x=-0.11875\), the model gives \(f(-0.11875)\approx1.8\), forming the highest visible boundary before the graph would rise too sharply toward the asymptote.
                     </li>
                 </ul>
 
                 <p>
-                    This strict boundary control successfully alters the infinite properties of the parent hyperbola into a restricted real-world interval. It terminates the mathematical curves precisely where the plastic molding ends in the photograph, completing a clean visual fit that matches the actual architecture of the chair.
+                    This strict boundary control successfully alters the infinite properties of the parent hyperbola into two realistic real-world intervals. It terminates the mathematical curves precisely where the plastic molding ends in the photograph while preserving the asymptotic behaviour that explains the sharp separation between the two visible branches.
                 </p>
 
                 <div class="equation-row">
-                    <div class="equation-slate"><span>Contextual Domain</span>\[ D: \{x \in \mathbb{R} \mid -0.7 < x < 0.9\} \]</div>
-                    <div class="equation-slate"><span>Contextual Range</span>\[ R: \{y \in \mathbb{R} \mid 0.5 < y < 1.8\} \]</div>
+                    <div class="equation-slate"><span>Contextual Domain</span>\[ D: \{x \in \mathbb{R} \mid -0.7 \le x \le -0.11875 \cup 0.268 \le x \le 0.9\} \]</div>
+                    <div class="equation-slate"><span>Contextual Range</span>\[ R: \{y \in \mathbb{R} \mid 0.5 \le y \le 0.863 \cup 1.163 \le y \le 1.8\} \]</div>
                 </div>
             </div>
         </div>
