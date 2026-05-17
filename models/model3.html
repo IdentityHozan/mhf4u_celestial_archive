@@ -1,0 +1,96 @@
+<article id="model-3" class="model-view"> 
+    <div class="model-card book-card"> 
+        <header class="model-header"> 
+            <div> 
+                <p class="model-series">MODEL III / RATIONAL (MANDATORY FUNCTION 3)</p>
+                <h1>Vertical Displacement from Mid Quadricep to Chair Curve as a Function of Horizontal Displacement from the Left Leg</h1>
+            </div>
+            <div class="star-rating">★★★★★</div>
+        </header>
+
+        <div class="graph-frame">
+            <a href="https://www.desmos.com/calculator/rso8yhoet2" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
+            <iframe data-src="https://www.desmos.com/calculator/rso8yhoet2?embed" title="Molded Plastic Chair Rational Model graph"></iframe>
+        </div>
+
+        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+
+        <div class="analysis-panel">
+            <div class="analysis-scroll">
+
+                <div class="lore-box">
+                    <p>“I chose this photo to show the curve of the blue plastic chair's back shape with 1/x function.
+                        To model the chair's upper frame, I selected the reciprocal parent function y = 1/x as a starting point. 
+                        Its hyperbolic form naturally mirrors the way the backrest contours upward and then levels off, so it was appropriate for modeling this design.”
+                    </p>
+                </div>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Parent Function</span>\[ y = \frac{1}{x} \]</div>
+                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = \frac{0.119}{-(x - 0.03)} + 1 \]</div>
+                </div>
+
+                <h3>Transformations Applied</h3>
+                <p>
+                    The standard y = 1/x curve was very steep for the relatively shallow curve of the plastic molded chair. To align the function's branches precisely with the physical plastic contours, transformations were applied to the parent function in a strict logical sequence:
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Horizontal Reflection:</strong>
+                        First, a horizontal reflection was applied by introducing a negative sign directly to the horizontal tracking argument in the denominator. This transformation flips the reciprocal branches across the vertical axis, reversing their direction to perfectly match the real slope orientation of the chair backrest panels.
+                    </li>
+                    <li>
+                        <strong>Vertical Compression:</strong>
+                        Next, a vertical compression factor of 0.119 was introduced to scale the curve. This step flattens the naturally steep, aggressive trajectory of the standard hyperbola branches so that the mathematical path can smoothly hug the shallow edge of the molded plastic frame.
+                    </li>
+                    <li>
+                        <strong>Horizontal Translation (\(d = 0.03\)):</strong>
+                        The function was then translated 0.03 units to the right, changing the denominator variable group to \(-(x - 0.03)\). This shift moves the vertical asymptote away from the origin, positioning the curve's bend to line up precisely with the physical peak of the backrest paneling. On this grid, each horizontal unit maps out exactly one decimeter (\(1\text{ dm} = 10\text{ cm}\)) in real space relative to the vertical tracking reference line running down from the left leg.
+                    </li>
+                    <li>
+                        <strong>Vertical Translation (\(c = 1\)):</strong>
+                        Finally, a vertical translation of 1 unit upward was applied to shift the entire model. This adjustment lifts the function's baseline away from the horizontal axis to align perfectly with the vertical displacement from the mid-quadricep coordinate layout, where each vertical unit represents approximately \(30\text{ cm}\) (calibrated because my height of \(162\text{ cm}\) spans \(5.3\) vertical units), which corresponds to the length of a standard sheet of A4 printer paper.
+                    </li>
+                </ul>
+
+                <h3>Domain, Range, and Asymptotic Behaviour</h3>
+                <p>
+                    The parent function \( y = \frac{1}{x} \) has a natural domain of \( D: \{x \in \mathbb{R} \mid x \neq 0\} \) and a range of \( R: \{y \in \mathbb{R} \mid y \neq 0\} \), meaning it splits infinitely around its central axes. Following our transformations, the vertical discontinuity shifts to \( x = 0.03 \) and the horizontal baseline asymptote settles at \( y = 1.0 \).
+                </p>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Vertical Asymptote</span>\[ x = 0.03 \]</div>
+                    <div class="equation-slate"><span>Horizontal Asymptote</span>\[ y = 1.0 \]</div>
+                </div>
+
+                <p>
+                    The domain is strictly restricted to isolate only the specific curved parts of the backrest that can be accurately represented by the 1/x function:
+                </p>
+                <p><strong>\[ D: \{x \in \mathbb{R} \mid -0.7 < x < 0.9\} \]</strong></p>
+
+                <p>
+                    Because this restricted domain explicitly spans across the vertical asymptote boundary at \( x = 0.03 \), the function exhibits its classic asymptotic split. This mathematical property allows a single equation to represent both independent sloping sides of the chair's top rail structure simultaneously, cutting off cleanly before entering empty space where the chair ends.
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Minimum Curve Height:</strong> Evaluating the outer limits of our trace segments away from the central split reveals an approximate minimum baseline vertical displacement of \( y \approx 0.5 \).
+                    </li>
+                    <li>
+                        <strong>Maximum Curve Height:</strong> As the reciprocal branches curve upward toward the vertical asymptote discontinuity, the tracking lines reach an approximate peak vertical displacement boundary of \( y \approx 1.8 \).
+                    </li>
+                </ul>
+
+                <p>
+                    This strict boundary control successfully alters the infinite properties of the parent hyperbola into a restricted real-world interval. It terminates the mathematical curves precisely where the plastic molding ends in the photograph, completing a clean visual fit that matches the actual architecture of the chair.
+                </p>
+
+                <div class="equation-row">
+                    <div class="equation-slate"><span>Contextual Domain</span>\[ D: \{x \in \mathbb{R} \mid -0.7 < x < 0.9\} \]</div>
+                    <div class="equation-slate"><span>Contextual Range</span>\[ R: \{y \in \mathbb{R} \mid 0.5 < y < 1.8\} \]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
