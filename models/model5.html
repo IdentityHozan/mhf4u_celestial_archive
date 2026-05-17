@@ -32,17 +32,18 @@
                 <h3>Transformations Applied</h3>
                 <p>To accurately track the structural curve against the image, the transformations were applied to the parent function in the correct mathematical order:</p>
                 <ul class="genshin-list">
-                    <li><strong>Vertical Compression (\(a = 5/8\)):</strong> This was applied first to reduce the amplitude of the wave from 1 to 5/8. This vertical squishing changes the steepness so that it conforms to the shallow, gentle slope of the concrete archway.</li>
-                    <li><strong>Horizontal Translation (\(d = 1.5\)):</strong> The graph was shifted 1.5 units to the right to line up the phase peak of the cosine wave perfectly with the highest point of the window arch on the grid.</li>
+                    <li><strong>Vertical Compression (\(a = 5/8\)):</strong> This was applied first to reduce the amplitude of the wave from 1 to 5/8. This vertical scaling changes the wave's height so that it conforms to the shallow, gentle slope of the concrete archway.</li>
+                    <li><strong>Horizontal Compression/Stretch (\(k = 1\)):</strong> The horizontal compression factor remains \(\frac{1}{1} = 1\), as the natural horizontal frequency of the parent cosine wave perfectly aligned with the architectural span of the arch without further alteration.</li>
+                    <li><strong>Horizontal Translation (\(d = 1.5\)):</strong> The graph was shifted 1.5 units to the right (\(d = 1.5\)) to line up the phase peak (vertex) of the cosine wave perfectly with the highest point of the window arch on the grid.</li>
                     <li><strong>Vertical Translation (\(c = 1\)):</strong> The graph was shifted 1 unit upward so that its baseline shifts up from the x-axis, matching the real position of the window ledge structure.</li>
                 </ul>
 
                 <h3>Physical Constraints</h3>
                 <p>The domain of this model is restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0.25 \le x \le 2.8\} \)</strong>. This restriction is necessary because the physical arch does not ripple across the entire wall space infinitely like the parent function; it is a localized architectural feature bounded by the column structure on the building facade.</p>
 
-                <p>While the parent function naturally fluctuates infinitely between \([-1, 1]\), our transformations change the boundaries of the curve completely. Because this model is restricted over the interval \([0.25, 2.8]\), the actual range is determined directly by evaluating the vertex and its endpoints:</p>
+                <p>While the parent function naturally fluctuates infinitely between \([-1, 1]\), our transformations change the boundaries of the curve completely. Because this model is restricted over the interval \([0.25, 2.8]\), the actual range is determined directly by evaluating the vertex and its endpoints. Since the absolute maximum vertex is captured within this interval, it defines the upper bound of our range.</p>
                 <ul class="genshin-list">
-                    <li><strong>Maximum Arch Height:</strong> The peak occurs exactly at the vertex \( x = 1.5 \), where \( f(1.5) = 1.625 \) units.</li>
+                    <li><strong>Maximum Arch Height:</strong> The peak occurs exactly at the wave vertex \( x = 1.5 \), where \( f(1.5) = 1.625 \) units.</li>
                     <li><strong>Minimum Arch Height:</strong> Since the function is continuous, evaluating the endpoints at \( x = 0.25 \) and \( x = 2.8 \) yields approximate heights of \( 1.1971 \) and \( 1.1672 \) respectively. The absolute lowest boundary occurs at the rightmost edge.</li>
                 </ul>
 

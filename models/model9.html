@@ -1,8 +1,8 @@
-<article id="model-8" class="model-view">
+<article id="model-9" class="model-view">
 <div class="model-card book-card"> 
     <header class="model-header"> 
         <div> 
-            <p class="model-series">MODEL IX / SQUARE ROOT</p>
+            <p class="model-series">MODEL IX / SQUARE ROOT (CHOICE FUNCTION 2)</p>
             <h1>Height of the Curved Ceiling Recess as a Function of Horizontal Displacement from Right Foot</h1>
         </div>
         <div class="star-rating">★★★★★</div>
@@ -39,35 +39,31 @@
 
             <h3>Transformations Applied</h3>
             <p>
-                The parent square root function normally begins at the origin and increases toward the right. However, the ceiling recess in the image curves toward the left and is positioned significantly higher than the parent graph. To accurately align the mathematical model with the real architectural feature, multiple transformations were applied in a logical sequence.
+                The parent square root function normally begins at the origin and increases toward the right. However, the ceiling recess in the image curves toward the left and is positioned significantly higher than the parent graph. To accurately align the mathematical model with the real architectural feature, transformations were applied in a precise sequence based on the mapping structure \(a\sqrt{k(x-d)}+c\):
             </p>
 
             <ul class="genshin-list">
                 <li>
-                    <strong>Horizontal Reflection:</strong>
-                    The negative sign inside the radical reflects the graph across the vertical axis, causing the square root curve to open toward the left instead of the right. This matched the orientation of the ceiling recess visible in the photograph.
-                </li>
-                <li>
-                    <strong>Horizontal Stretch by a Factor of 2:</strong>
-                    The coefficient \(-\frac12\) inside the radical horizontally stretches the graph, allowing the curve to widen and more accurately follow the gradual curvature of the recess across the ceiling.
+                    <strong>Horizontal Reflection & Stretch (\(k=-\frac{1}{2}\)):</strong>
+                    The coefficient \(k=-\frac{1}{2}\) acts inside the radical. The negative sign reflects the graph across the vertical axis, causing the square root curve to open toward the left instead of the right to match the orientation of the ceiling recess. Simultaneously, this parameter applies a horizontal stretch by a factor of \(\frac{1}{|k|} = \frac{1}{1/2} = 2\), widening the path to follow the gradual curvature across the ceiling.
                 </li>
                 <li>
                     <strong>Horizontal Translation (\(d=4\)):</strong>
-                    The expression \((x-4)\) shifts the endpoint of the square root graph 4 units to the right. In the context of this model, the horizontal axis represents displacement measured from my right foot, allowing the endpoint of the curve to align with the architectural boundary of the recess.
+                    The factored expression \((x-4)\) outlines a horizontal translation of 4 units to the right (\(d=4\)). In the context of this model, this shifts the starting endpoint of the radical curve away from the origin to align with the architectural boundary line of the recess.
                 </li>
                 <li>
-                    <strong>Vertical Stretch (\(a=0.99\)):</strong>
-                    The multiplier 0.99 slightly adjusts the height of the graph. Since the value is close to 1, the overall shape remains similar to the parent function while still refining the curve enough to better match the photograph.
+                    <strong>Vertical Compression (\(a=0.99\)):</strong>
+                    The multiplier \(a=0.99\) slightly compresses the height of the graph vertically. Since the value is extremely close to 1, the overall trajectory remains similar to the parent function while refining the edge alignment.
                 </li>
                 <li>
                     <strong>Vertical Translation (\(c=7\)):</strong>
-                    The graph was translated 7 units upward so that the entire curve aligned with the elevated ceiling structure in the image.
+                    The graph was translated 7 units upward (\(c=+7\)) so that the entire curve aligned with the elevated ceiling structure in the image.
                 </li>
             </ul>
 
             <h3>Domain, Range, and Restrictions</h3>
             <p>
-                The parent square root function \(y=\sqrt{x}\) has a domain of \(x\ge0\) and a range of \(y\ge0\). However, because my transformed model contains a reflected and translated radical expression, the restrictions must be re-evaluated.
+                The parent square root function \(y=\sqrt{x}\) has a domain of \(x\ge0\) and a range of \(y\ge0\). However, because my transformed model contains a reflected and translated radical expression, the restrictions must be re-evaluated using the foundational radicand requirement:
             </p>
 
             <div class="equation-row">
@@ -82,7 +78,7 @@
             </div>
 
             <p>
-                Since square root functions cannot contain negative values inside the radical, the graph cannot extend beyond \(x=4\). At \(x=4\), the graph reaches its endpoint because the radicand becomes exactly zero.
+                Since square root functions cannot contain negative values inside the radical over the real number set, the graph cannot extend beyond its endpoint at \(x=4\), where the interior value evaluates to exactly zero.
             </p>
 
             <p>The restricted domain for the physical model is:</p>
@@ -99,11 +95,11 @@
             <ul class="genshin-list">
                 <li>
                     <strong>Maximum Height:</strong> At \(x=3.24\),
-                    \[ f(3.24)\approx7.6103 \]
+                    \[ f(3.24) = 0.99\sqrt{-\frac{1}{2}(3.24-4)}+7 \approx 7.6103 \]
                 </li>
                 <li>
                     <strong>Minimum Height:</strong> At \(x=4\),
-                    \[ f(4)=7 \]
+                    \[ f(4) = 0.99\sqrt{0}+7 = 7 \]
                 </li>
             </ul>
 

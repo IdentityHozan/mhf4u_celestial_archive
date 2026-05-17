@@ -30,17 +30,17 @@
                 </div>
 
                 <h3>Transformations Applied</h3>
-                <p>To model the curving pathway accurately against the image, transformations were applied to the parent function in the correct mathematical order:</p>
+                <p>To model the curving pathway accurately against the image, transformations were applied to the parent function \(y=2^x\) in a structured mathematical sequence:</p>
                 <ul class="genshin-list">
-                    <li><strong>Base Adjustment / Horizontal Stretch (\(b = 1.38\)):</strong> First, the base was changed from 2 to 1.38. This alters the rate of growth, creating a more gradual horizontal stretch so that the curvature perfectly matches the incline of the concrete path.</li>
-                    <li><strong>Horizontal Translation (\(d = 15.6\)):</strong> Next, the graph was shifted 15.6 units to the right to move the main growth curve away from the y-axis, aligning it with the position where the concrete path begins its clear upward sweep.</li>
+                    <li><strong>Base Adjustment & Horizontal Stretch (\(b = 1.38\)):</strong> Changing the base from 2 to 1.38 alters the core growth rate. In standard transformation mapping terms, this change can be modeled as a horizontal stretch factor of \(\frac{1}{k} = \frac{1}{\log_2(1.38)} \approx 2.15\). This flattens the curve horizontally, ensuring the exponential growth aligns exactly with the gradual incline of the concrete path.</li>
+                    <li><strong>Horizontal Translation (\(d = 15.6\)):</strong> Next, the graph was shifted 15.6 units to the right (\(d = 15.6\)) to move the main growth curve away from the y-axis, aligning it with the position where the concrete path begins its clear upward sweep.</li>
                     <li><strong>Vertical Translation (\(c = -0.0053\)):</strong> Finally, the graph was shifted 0.0053 units downward so that the lower, flatter section of the curve matches the baseline elevation of the path.</li>
                 </ul>
 
                 <h3>Physical Constraints</h3>
                 <p>The domain of this model is restricted to <strong>\( D: \{x \in \mathbb{R} \mid 0 \le x \le 20\} \)</strong> because the concrete path in the photograph only spans between those horizontal coordinate limits. Beyond \( x = 20 \), the physical path is cut off by the staircase landing platform.</p>
                 
-                <p>While the parent function has a natural range of \( (0, \infty) \) and a horizontal asymptote along the x-axis, our transformations shift the horizontal asymptote down to <strong>\( y = -0.0053 \)</strong>. In this real-world context, the range changes significantly because it is bounded by our tracking endpoints rather than continuing to infinity. Evaluating the function at the boundaries reveals these physical constraints:</p>
+                <p>While the parent function has a natural range of \( (0, \infty) \) and a horizontal asymptote along the x-axis (\(y=0\)), our transformations shift the horizontal asymptote down to <strong>\( y = -0.0053 \)</strong>. In this real-world context, the range changes significantly because it is bounded by our tracking endpoints rather than continuing to infinity. Evaluating the function at the boundaries reveals these physical constraints:</p>
 
                 <ul class="genshin-list">
                     <li><strong>Starting Path Elevation:</strong> At \( x = 0 \), \( f(0) \approx 0.0013 \), marking where the path enters the left side of the camera frame.</li>
