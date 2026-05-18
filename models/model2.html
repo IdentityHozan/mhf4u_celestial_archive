@@ -2,7 +2,7 @@
     <div class="model-card book-card"> 
         <header class="model-header"> 
             <div> 
-                <p class="model-series">MODEL II / RECIPROCAL SQUARED (MANDATORY FUNCTION 2)</p>
+                <p class="model-series">MODEL II / RECIPROCAL OF A QUADRATIC (MANDATORY FUNCTION 2)</p>
                 <h1>Height from Base of Bus Chassis as a Function of Horizontal Distance from the Leftmost Window Frame</h1>
             </div>
             <div class="star-rating">★★★★★</div>
@@ -10,63 +10,143 @@
 
         <div class="graph-frame">
             <a href="https://www.desmos.com/calculator/32aoestq7u" target="_blank" class="open-embed-btn">↗ Open in Desmos</a>
-            <iframe data-src="https://www.desmos.com/calculator/32aoestq7u?embed" title="Attack on Titan Bus Reciprocal Squared Model"></iframe>
+            <iframe data-src="https://www.desmos.com/calculator/32aoestq7u?embed" title="Attack on Titan Bus Reciprocal of a Quadratic Model"></iframe>
         </div>
 
-        <div class="resizer" title="Drag to resize"><div class="resizer-handle"></div></div>
+        <div class="resizer" title="Drag to resize">
+            <div class="resizer-handle"></div>
+        </div>
 
         <div class="analysis-panel">
             <div class="analysis-scroll">
 
                 <div class="lore-box">
-                    <p>“I chose this photo because it shows the Attack on Titan mural on the KL Hop-On Hop-Off bus, which connects to my experience in Malaysia and my interest in anime culture. 
-                        While observing the character design illustrations, I noticed that the outer curve of Levi's flying cape formed a steep curve that gradually leveled out, matching the right branch of a reciprocal squared function.”
+                    <p>
+                        “I chose this photo because it shows the Attack on Titan mural on the KL Hop-On Hop-Off bus, which connects to my experience in Malaysia and my interest in anime culture. 
+                        While observing the character design illustration, I noticed that the outer curve of Levi’s flying cape formed a steep curve that gradually leveled out. 
+                        Since this shape closely follows one branch of a rational function with vertical asymptotic behaviour, I selected the reciprocal of a quadratic function as the parent model.”
                     </p>
                 </div>
 
                 <div class="equation-row">
-                    <div class="equation-slate"><span>Parent Function</span>\[ y = \frac{1}{x^2} \]</div>
-                    <div class="equation-slate"><span>Transformed Model</span>\[ f(x) = \frac{1}{x^2-142} + 3.3 \]</div>
+                    <div class="equation-slate">
+                        <span>Parent Function</span>
+                        \[ y = \frac{1}{x^2 - 142} \]
+                    </div>
+                    <div class="equation-slate">
+                        <span>Transformed Model</span>
+                        \[ f(x) = \frac{1}{x^2 - 142} + 3.3 \]
+                    </div>
                 </div>
 
                 <h3>Transformations Applied</h3>
-                <p>To accurately track the swift curve of the flying cape drawing on the bus mural, transformations were applied to the parent function \( y = \frac{1}{x^2} \) in strict mathematical order. To analyze horizontal alterations in standard mapping form, the denominator is evaluated based on its shift values: </p>
+                <p>
+                    For this model, the accepted parent function is \( y=\frac{1}{x^2-142} \), which is the reciprocal of a quadratic expression. 
+                    This parent function was selected because its right-hand branch matches the cape curve’s steep rise followed by gradual flattening. 
+                    Since the parent function already contains the structural shape needed for the cape, the transformation applied to the model is only a vertical translation.
+                </p>
 
                 <ul class="genshin-list">
-                    <li><strong>Rational Denominator Expansion via Quadratic Shift (\( d = \sqrt{142} \approx 11.92 \)):</strong> The function was translated approximately 11.92 units to the right, changing the denominator structure to \( x^2 - 142 \). This shifts the parent function's natural vertical asymptote away from the origin to \( x = \sqrt{142} \). This positioning aligns the sharp drop of the right branch with the steep, outer edge of the character's flying cape.</li>
-                    <li><strong>Horizontal Compression/Stretch (\(k = 1\)):</strong> The horizontal scaling factor remains unchanged at a factor of \(\frac{1}{1} = 1\), preserving the core curve width of the parent function's single-branch path.</li>
-                    <li><strong>Vertical Translation (\( c = 3.3 \)):</strong> Next, the entire graph was shifted 3.3 units upward. This vertical translation elevates the curve's baseline to align with the physical height of the cape graphic relative to the lower edge of the bus chassis.</li>
+                    <li>
+                        <strong>Vertical Translation (\(c=3.3\)):</strong>
+                        The graph was shifted 3.3 units upward, producing \(f(x)=\frac{1}{x^2-142}+3.3\). 
+                        This raises the curve so that it aligns with the physical height of the cape graphic relative to the lower edge of the bus chassis.
+                    </li>
                 </ul>
 
                 <h3>Physical Constraints and Asymptotic Behaviour</h3>
-                <p>The parent function \( y = \frac{1}{x^2} \) has an infinite domain where \( x \neq 0 \), a range of \( y > 0 \), and a vertical asymptote running along the y-axis. In this transformed real-world model, the function contains two mathematical discontinuities where the denominator equals zero, producing vertical asymptotes at \( x = \pm\sqrt{142} \) (or roughly \( x \approx \pm 11.92 \)). Because our model utilizes only the positive branch, the key operational boundary is the vertical asymptote at \( x \approx 11.92 \). As values of \(x\) approach this threshold from the right, the outputs head toward positive infinity, perfectly capturing the nearly vertical upper edge of the cape graphic.</p>
-
-                <div class="equation-row">
-                    <div class="equation-slate"><span>Vertical Asymptotes</span>\[ x = \pm\sqrt{142} \approx \pm11.92 \]</div>
-                    <div class="equation-slate"><span>Horizontal Asymptote</span>\[ y = 3.3 \]</div>
-                </div>
-
-                <p>For the webpage presentation, the domain is strictly limited to the specific boundaries where the character's cape is actively drawn across the background panels:</p>
-                <p><strong>\[ D: \{x \in \mathbb{R} \mid 11.94 \le x \le 14.2\} \]</strong></p>
-
-                <p>Since the rational function is completely continuous and decreasing over this particular window, the maximum and minimum elevations are found directly by evaluating our tracking endpoints. By clipping the domain slightly to the right of the vertical asymptote at \(x = 11.94\), we prevent the function from extending into an unrealistic, infinite vertical spike.</p>
-
-                <ul class="genshin-list">
-                    <li><strong>Maximum Cape Height:</strong> The highest boundary point occurs near the asymptote at \( x = 11.94 \), where \( f(11.94) \approx 5.0743 \).</li>
-                    <li><strong>Minimum Cape Height:</strong> As the cape curve flattens out towards the right, evaluating the endpoint at \( x = 14.2 \) yields an approximate height of \( f(14.2) \approx 3.3168 \).</li>
-                </ul>
-
-                <p>This contextual restriction alters the infinite range of the parent function into a restricted real-world interval. This prevents the mathematical model from extending up into empty air space or down past the physical layout coordinates where the illustration terminates.</p>
-
-                <h3>Why This Model Fits and Rejected Alternatives</h3>
                 <p>
-                    A reciprocal squared function was chosen because the cape curve rises steeply near one boundary and then gradually levels out as it moves away from the asymptote. This behaviour closely matches the right branch of a transformed \(y=\frac{1}{x^2}\) function. The denominator adjustment \(x^2-142\) creates vertical asymptotes at \(x=\pm\sqrt{142}\), and the model only uses the positive branch because that is the part that matches the visible cape. A linear model was rejected because the cape is clearly curved rather than straight. A quadratic model was also less suitable because it would form a rounded turning point instead of the steep asymptotic edge shown in the image. Therefore, the reciprocal squared model gives a more realistic mathematical explanation of the cape’s sharp drop and gradual flattening.
+                    The parent function \(y=\frac{1}{x^2-142}\) is undefined wherever its denominator equals zero. 
+                    Since \(x^2-142=0\) when \(x=\pm\sqrt{142}\), the parent function has two vertical asymptotes:
+                    \[
+                    x=\pm\sqrt{142}\approx\pm11.92
+                    \]
+                    In this real-world model, only the positive branch is used because the visible cape curve lies to the right of the positive asymptote.
                 </p>
 
                 <div class="equation-row">
-                    <div class="equation-slate"><span>Contextual Domain</span>\[ D: \{x \in \mathbb{R} \mid 11.94 \le x \le 14.2\} \]</div>
-                    <div class="equation-slate"><span>Contextual Range</span>\[ R: \{y \in \mathbb{R} \mid 3.3168 \le y \le 5.0743\} \]</div>
+                    <div class="equation-slate">
+                        <span>Vertical Asymptotes</span>
+                        \[ x=\pm\sqrt{142}\approx\pm11.92 \]
+                    </div>
+                    <div class="equation-slate">
+                        <span>Horizontal Asymptote</span>
+                        \[ y=3.3 \]
+                    </div>
                 </div>
+
+                <p>
+                    The full parent function continues infinitely and includes multiple disconnected regions separated by the two vertical asymptotes. 
+                    However, the physical cape in the photograph only occupies a limited section of the right-hand branch. 
+                    Therefore, the domain is strictly restricted to the visible cape boundary:
+                </p>
+
+                <p>
+                    <strong>
+                        \[
+                        D:\{x\in\mathbb{R}\mid11.94\le x\le14.2\}
+                        \]
+                    </strong>
+                </p>
+
+                <p>
+                    This restricted domain begins slightly to the right of the positive vertical asymptote at \(x\approx11.92\), preventing the graph from extending into an unrealistic infinite spike. 
+                    It also ends at \(x=14.2\), where the visible cape curve flattens and terminates in the mural design.
+                </p>
+
+                <p>
+                    Over the interval \(11.94\le x\le14.2\), the function is continuous and decreasing. 
+                    Because of this, the maximum and minimum values can be determined by evaluating the function at the domain endpoints.
+                </p>
+
+                <ul class="genshin-list">
+                    <li>
+                        <strong>Maximum Cape Height:</strong>
+                        At the left endpoint near the asymptote, \(x=11.94\):
+                        \[
+                        f(11.94)=\frac{1}{11.94^2-142}+3.3\approx5.0743
+                        \]
+                        This represents the highest visible part of the cape curve before the graph would rise too sharply toward the asymptote.
+                    </li>
+
+                    <li>
+                        <strong>Minimum Cape Height:</strong>
+                        At the right endpoint, \(x=14.2\):
+                        \[
+                        f(14.2)=\frac{1}{14.2^2-142}+3.3\approx3.3168
+                        \]
+                        This represents the lower, flatter part of the cape curve as it moves away from the asymptote.
+                    </li>
+                </ul>
+
+                <p>
+                    Therefore, the contextual range of the restricted real-world model is:
+                    \[
+                    R:\{y\in\mathbb{R}\mid3.3168\le y\le5.0743\}
+                    \]
+                    This range is much narrower than the unrestricted rational function because the model only represents the visible cape segment in the photograph.
+                </p>
+
+                <h3>Why This Model Fits and Rejected Alternatives</h3>
+                <p>
+                    A reciprocal of a quadratic function was chosen because the cape curve rises sharply near one boundary and gradually levels out as it moves away from the vertical asymptote. 
+                    The parent function \(y=\frac{1}{x^2-142}\) naturally has two vertical asymptotes at \(x=\pm\sqrt{142}\), but only the positive branch is used because that is the branch that matches the visible cape. 
+                    A linear model was rejected because the cape is clearly curved rather than straight. 
+                    A quadratic model was also less suitable because it would form a rounded turning point instead of the steep asymptotic edge shown in the image. 
+                    The reciprocal of a quadratic model fits better because it explains both the sharp boundary near the cape’s edge and the gradual flattening as the curve moves rightward.
+                </p>
+
+                <div class="equation-row">
+                    <div class="equation-slate">
+                        <span>Contextual Domain</span>
+                        \[ D:\{x\in\mathbb{R}\mid11.94\le x\le14.2\} \]
+                    </div>
+                    <div class="equation-slate">
+                        <span>Contextual Range</span>
+                        \[ R:\{y\in\mathbb{R}\mid3.3168\le y\le5.0743\} \]
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
